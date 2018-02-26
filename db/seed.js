@@ -28,7 +28,7 @@ mongoose
     
 // seed for cities    
 
-    const Atlanta = new City({name: "Atlanta", state: "Georgia", country: "US", photo: "https://i.imgur.com/jGyldh4.jpg"})
+    const Atlanta = new City({city: "Atlanta", state: "Georgia", country: "US", photo: "https://i.imgur.com/jGyldh4.jpg"})
     const house1 = new House({
       house_photo: "http://www.clipartlord.com/wp-content/uploads/2014/04/egg4.png",
       amenities: "Dreyer",
@@ -78,7 +78,7 @@ mongoose
     Atlanta.houses.push(house1, house2, house3)
 
 
-    const Miami = new City({name: "Miami", state: "Florida", country: "US", photo: "https://i.imgur.com/jGyldh4.jpg"})
+    const Miami = new City({city: "Miami", state: "Florida", country: "US", photo: "https://i.imgur.com/jGyldh4.jpg"})
     const house4 = new House({
       house_photo: "http://www.clipartlord.com/wp-content/uploads/2014/04/egg4.png",
       amenities: "Dreyer",
@@ -129,7 +129,7 @@ mongoose
     Miami.houses.push(house4, house5, house6)
 
 
-    const LA = new City({name: "Los Angelous", state: "California", country: "US", photo: "https://i.imgur.com/jGyldh4.jpg"})
+    const LA = new City({city: "Los Angelous", state: "California", country: "US", photo: "https://i.imgur.com/jGyldh4.jpg"})
     const house7 = new House({
       house_photo: "http://www.clipartlord.com/wp-content/uploads/2014/04/egg4.png",
       amenities: "Dreyer",
@@ -180,7 +180,7 @@ mongoose
     LA.houses.push(house6, house7, house9)
 
 
-    const NewYork = new City({name: "New York City", state: "New York", country: "US", photo: "https://i.imgur.com/jGyldh4.jpg"})
+    const NewYork = new City({city: "New York City", state: "New York", country: "US", photo: "https://i.imgur.com/jGyldh4.jpg"})
     const house10 = new House({
       house_photo: "http://www.clipartlord.com/wp-content/uploads/2014/04/egg4.png",
       amenities: "Dreyer",
@@ -245,21 +245,21 @@ mongoose
     
 User.remove({})
   .then(() => {
-    console.log(`the user Jean was saved ${Jean}`)
+    console.log(`saved => Jean`)
     return Jean.save()
   })
     
   City.remove({}).then(()=> { 
-    // console.log(`the data of Miam , here is the data${Miami}`)
+    console.log(`saved => Miami`)
       return Miami.save()
       .then(()=>{
-        // console.log(`the data of LA , here is the data ${LA}`)
+        console.log(`saved => LA `)
         return LA.save()
       }).then(()=>{
-        // console.log(`the data of NewYork , here is the data${NewYork}`)
+        console.log(`saved => New York`)
         return NewYork.save()
       }).then(()=>{
-        // console.log(`the data of Atlanta , here is the data ${Atlanta}`)
+        console.log(`saved => Atlanta `)
         return Atlanta.save()
       })
 
@@ -269,10 +269,7 @@ User.remove({})
       .close()
 
     console.log(`
-  Finished seeding database...
-  
-  Disconnected from MongoDB
-  `)
+  Finished seeding database...Disconnected from MongoDB`)
   })
   .catch(err => {
     console.log('ERROR SAVING SEEDED DATA !!!!!', err)
