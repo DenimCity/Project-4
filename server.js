@@ -25,18 +25,15 @@ connection.on('error', (err) => {
 }); 
 
 app.use(bodyParser.json());
-// app.get('/', (req,res) => {
-//   res.send('Hello world!')
-// })
 
 const user = require('./routes/userController')
 app.use('/homecoming/user', user)
-console.log('phase 1 route in server file ', user)
+// console.log('phase 1 route in server file ', user)
 
 const city = require('./routes/cityController')
-app.use('homecoming/city', city)
+app.use('/homecoming/city', city)
 
-console.log('phase 2 route server file', city)
+// console.log('phase 2 route server file', city)
 
 const PORT = process.env.PORT || 4000;
 app.listen(PORT, () => {
