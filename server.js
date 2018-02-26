@@ -29,10 +29,16 @@ app.use(bodyParser.json());
 //   res.send('Hello world!')
 // })
 
-const userController = require('./routes/userController')
-app.use('/homecoming/user', userController)
+const user = require('./routes/userController')
+app.use('/homecoming/user', user)
+console.log('phase 1 route in server file ', user)
+
+const city = require('./routes/cityController')
+app.use('homecoming/city', city)
+
+console.log('phase 2 route server file', city)
 
 const PORT = process.env.PORT || 4000;
 app.listen(PORT, () => {
-  console.log("Magic happening on port " + PORT);
+  console.log("your Server aka Api is running on port " + PORT);
 })
