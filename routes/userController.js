@@ -1,6 +1,22 @@
 const express = require('express')
-// const { User } =require('../db/schema')
+const { User } = require('../db/schema')
 const router = express.Router()
+
+
+router.get('/profile', async(req, res) => {
+  try {
+   console.log('hit the user profile route')
+    res.json(testJson)
+  } catch (error) {
+    console.log(error)
+  }
+})
+
+const testJson = {
+  name:"Jean",
+  email:"jean@aol.com",
+  
+}
 
 
 router.get('/signup', (req, res) => {
@@ -30,6 +46,7 @@ router.get('/secret', (req, res) => {
   }
   
 })
+
 
 
 
