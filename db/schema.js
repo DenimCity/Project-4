@@ -2,7 +2,7 @@ const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 mongoose.Promise = global.Promise
 
-console.log("hello from schema folder")
+// console.log("hello from schema folder")
 
 const EventSchema = new Schema ({
   owner: {
