@@ -1,13 +1,12 @@
 const express = require('express')
 const City  =require('../db/models/City')
 const router = express.Router()
-// const bodyParser = require('body-parser')
 
-console.log('here from the city  routes controller folder')
+// console.log('here from the city  routes controller folder')
 
 
 router.get('/', async(request, response) => {
-  console.log('hit the get all cities route')
+  // console.log('hit the get all cities route')
   try {
     const cities = await City.find()
     response.json(cities)

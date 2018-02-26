@@ -4,10 +4,10 @@ const router = express.Router()
 // const bodyParser = require('body-parser')
 
 
-console.log('here from the user routes controller folder')
+// console.log('here from the user routes controller folder')
 
 router.get('/profile', async(request, response) => {
-  console.log('hit  the user profile rout')
+  // console.log('hit  the user profile route')
   try {
     const users = await User.find()
     response.json(users)
