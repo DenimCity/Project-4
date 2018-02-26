@@ -25,9 +25,12 @@ connection.on('error', (err) => {
 }); 
 
 app.use(bodyParser.json());
-app.get('/api/homecoming', (req,res) => {
-  res.send('Hello world!')
-})
+// app.get('/', (req,res) => {
+//   res.send('Hello world!')
+// })
+
+const userController = require('./routes/userController')
+app.use('/homecoming/user', userController)
 
 const PORT = process.env.PORT || 4000;
 app.listen(PORT, () => {
