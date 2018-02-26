@@ -25,7 +25,7 @@ connection.on('error', (err) => {
 }); 
 
 app.use(bodyParser.json());
-app.get('/', (req,res) => {
+app.get('/api/homecoming', (req,res) => {
   res.send('Hello world!')
 })
 
