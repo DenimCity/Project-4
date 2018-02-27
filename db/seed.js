@@ -78,7 +78,7 @@ mongoose
     Atlanta.houses.push(house1, house2, house3)
 
 
-    const Miami = new City({city: "Miami", state: "Florida", country: "US", photo: "https://i.imgur.com/jGyldh4.jpg"})
+    const Miami = new City({city: "Miami", state: "Florida", country: "US", photo: "https://i.imgur.com/e5p5fnD.jpg"})
     const house4 = new House({
       house_photo: "http://www.clipartlord.com/wp-content/uploads/2014/04/egg4.png",
       amenities: "Dreyer",
@@ -129,7 +129,7 @@ mongoose
     Miami.houses.push(house4, house5, house6)
 
 
-    const LA = new City({city: "Los Angelous", state: "California", country: "US", photo: "https://i.imgur.com/jGyldh4.jpg"})
+    const LA = new City({city: "Los Angelous", state: "California", country: "US", photo: "http://www.mbdalosangeles.org/uploads/1/0/6/0/10602258/hdr-losangeles1_orig.jpg"})
     const house7 = new House({
       house_photo: "http://www.clipartlord.com/wp-content/uploads/2014/04/egg4.png",
       amenities: "Dreyer",
@@ -180,7 +180,7 @@ mongoose
     LA.houses.push(house6, house7, house9)
 
 
-    const NewYork = new City({city: "New York City", state: "New York", country: "US", photo: "https://i.imgur.com/jGyldh4.jpg"})
+    const NewYork = new City({city: "New York City", state: "New York", country: "US", photo: "https://i.imgur.com/VKWt9BC.jpg"})
     const house10 = new House({
       house_photo: "http://www.clipartlord.com/wp-content/uploads/2014/04/egg4.png",
       amenities: "Dreyer",
