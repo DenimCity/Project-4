@@ -4,7 +4,7 @@ mongoose.Promise = global.Promise
 
 // console.log("hello from schema folder")
 
-const EventSchema = new Schema ({
+const EventSchema = new Schema({
   owner: {
     type: String
   },
@@ -32,6 +32,12 @@ const HouseSchema = new Schema({
   address: {
     type: String
   },
+  longitude: {
+    type: String
+  },
+  latitude: {
+    type: String
+  },
   zip: {
     type: String
   },
@@ -44,15 +50,18 @@ const HouseSchema = new Schema({
   bathroom: {
     type: String
   },
+  owner: {
+    type: String
+  },
+  owner_photo: {
+    type: String
+  },
+  owner_phone: {
+    type: String
+  },
   livingroom: {
     type: String
-  },
-  closet: {
-    type: String
-  },
-  backyard: {
-    type: String
-  },
+  }
 }, {
   timestamps: {},
   usePushEach: true
@@ -112,5 +121,5 @@ module.exports = {
   CitySchema,
   EventSchema,
   HouseSchema
-  
+
 }
