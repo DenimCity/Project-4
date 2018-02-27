@@ -2,8 +2,6 @@ require('dotenv').config()
 const City = require('./models/City')
 const User = require('./models/User')
 const House = require('./models/House')
-const Event = require('./models/Event')
-
 const mongoose = require('mongoose')
 
 // connect to database
@@ -19,7 +17,7 @@ mongoose
   .connection
   .on('error', (error) => {
     console.error(`
-      MongoDB connection error!!! 
+      MongoDB connection error!!!
       ${error}
     `)
     process.exit(-1)
@@ -30,17 +28,18 @@ mongoose
 
     const Atlanta = new City({city: "Atlanta", state: "Georgia", country: "US", photo: "https://i.imgur.com/jGyldh4.jpg"})
     const house1 = new House({
-      house_photo: "http://www.clipartlord.com/wp-content/uploads/2014/04/egg4.png",
-      amenities: "Dreyer",
-      description: "Nice",
+      house_photo: "https://a0.muscache.com/im/pictures/96fef64d-1cdf-488b-a817-ee7f85e40219.jpg?aki_policy=xx_large",
+      amenities: "Kitchen, Cable TV, Wifi, Indoor fireplace",
+      description: `5 bedrooms, 3.5 baths, living room, formal dining, informal dining, den, living room, foyer, gourmet kitchen, and laundry room.`,
       address: "Ellie Overpass",
-      zip: "48099-2774",
+      zip: "30308",
       price: "$600",
-      kitchen: "Dirty",
-      bathroom: "nice",
-      livingroom: "cool",
-      closet: "dirty",
-      backyard: "filthy"
+      kitchen: "https://a0.muscache.com/im/pictures/29bf93fe-f33e-4b83-aa39-8196d64233bd.jpg?aki_policy=x_large",
+      bathroom: "https://a0.muscache.com/im/pictures/0691c9ad-93f9-4815-a8fa-d3cfcd147138.jpg?aki_policy=x_large",
+      livingroom: "https://a0.muscache.com/im/pictures/b5f6d818-4033-4e80-a19a-93be5eb8f0db.jpg?aki_policy=x_large",
+      owner: "Tony",
+      owner_photo: "https://i.imgur.com/VopCByG.jpg",
+      owner_phone: "359.764.7139"
     })
 
     const house2 = new House({
@@ -53,11 +52,9 @@ mongoose
       kitchen: "Dirty",
       bathroom: "nice",
       livingroom: "cool",
-      closet: "dirty",
-      backyard: "filthy",
-      Event: "Tony",
+      owner: "Tony",
       photo: "http://www.clipartlord.com/wp-content/uploads/2014/04/egg4.png",
-      phone: "359.764.7139"
+      owner_phone: "359.764.7139"
     })
     const house3 = new House({
       house_photo: "http://www.clipartlord.com/wp-content/uploads/2014/04/egg4.png",
@@ -69,11 +66,9 @@ mongoose
       kitchen: "Dirty",
       bathroom: "nice",
       livingroom: "cool",
-      closet: "dirty",
-      backyard: "filthy",
-      Event: "Tony",
+      owner: "Tony",
       photo: "http://www.clipartlord.com/wp-content/uploads/2014/04/egg4.png",
-      phone: "359.764.7139"
+      owner_phone: "359.764.7139"
     })
     Atlanta.houses.push(house1, house2, house3)
 
@@ -89,8 +84,9 @@ mongoose
       kitchen: "Dirty",
       bathroom: "nice",
       livingroom: "cool",
-      closet: "dirty",
-      backyard: "filthy"
+      owner: "Tony",
+      photo: "http://www.clipartlord.com/wp-content/uploads/2014/04/egg4.png",
+      owner_phone: "359.764.7139"
     })
 
     const house5 = new House({
@@ -103,11 +99,9 @@ mongoose
       kitchen: "Dirty",
       bathroom: "nice",
       livingroom: "cool",
-      closet: "dirty",
-      backyard: "filthy",
-      Event: "Tony",
+      owner: "Tony",
       photo: "http://www.clipartlord.com/wp-content/uploads/2014/04/egg4.png",
-      phone: "359.764.7139"
+      owner_phone: "359.764.7139"
     })
     const house6 = new House({
       house_photo: "http://www.clipartlord.com/wp-content/uploads/2014/04/egg4.png",
@@ -119,11 +113,9 @@ mongoose
       kitchen: "Dirty",
       bathroom: "nice",
       livingroom: "cool",
-      closet: "dirty",
-      backyard: "filthy",
-      Event: "Tony",
+      owner: "Tony",
       photo: "http://www.clipartlord.com/wp-content/uploads/2014/04/egg4.png",
-      phone: "359.764.7139"
+      owner_phone: "359.764.7139"
     })
 
     Miami.houses.push(house4, house5, house6)
@@ -140,8 +132,9 @@ mongoose
       kitchen: "Dirty",
       bathroom: "nice",
       livingroom: "cool",
-      closet: "dirty",
-      backyard: "filthy"
+      owner: "Tony",
+      photo: "http://www.clipartlord.com/wp-content/uploads/2014/04/egg4.png",
+      owner_phone: "359.764.7139"
     })
 
     const house8 = new House({
@@ -154,11 +147,9 @@ mongoose
       kitchen: "Dirty",
       bathroom: "nice",
       livingroom: "cool",
-      closet: "dirty",
-      backyard: "filthy",
-      Event: "Tony",
+      owner: "Tony",
       photo: "http://www.clipartlord.com/wp-content/uploads/2014/04/egg4.png",
-      phone: "359.764.7139"
+      owner_phone: "359.764.7139"
     })
     const house9 = new House({
       house_photo: "http://www.clipartlord.com/wp-content/uploads/2014/04/egg4.png",
@@ -170,11 +161,9 @@ mongoose
       kitchen: "Dirty",
       bathroom: "nice",
       livingroom: "cool",
-      closet: "dirty",
-      backyard: "filthy",
-      Event: "Tony",
+      owner: "Tony",
       photo: "http://www.clipartlord.com/wp-content/uploads/2014/04/egg4.png",
-      phone: "359.764.7139"
+      owner_phone: "359.764.7139"
     })
 
     LA.houses.push(house6, house7, house9)
@@ -191,8 +180,9 @@ mongoose
       kitchen: "Dirty",
       bathroom: "nice",
       livingroom: "cool",
-      closet: "dirty",
-      backyard: "filthy"
+      owner: "Tony",
+      photo: "http://www.clipartlord.com/wp-content/uploads/2014/04/egg4.png",
+      owner_phone: "359.764.7139"
     })
 
     const house11 = new House({
@@ -205,11 +195,9 @@ mongoose
       kitchen: "Dirty",
       bathroom: "nice",
       livingroom: "cool",
-      closet: "dirty",
-      backyard: "filthy",
-      Event: "Tony",
+      owner: "Tony",
       photo: "http://www.clipartlord.com/wp-content/uploads/2014/04/egg4.png",
-      phone: "359.764.7139"
+      owner_phone: "359.764.7139"
     })
     const house12 = new House({
       house_photo: "http://www.clipartlord.com/wp-content/uploads/2014/04/egg4.png",
@@ -221,11 +209,9 @@ mongoose
       kitchen: "Dirty",
       bathroom: "nice",
       livingroom: "cool",
-      closet: "dirty",
-      backyard: "filthy",
-      Event: "Tony",
+      owner: "Tony",
       photo: "http://www.clipartlord.com/wp-content/uploads/2014/04/egg4.png",
-      phone: "359.764.7139"
+      owner_phone: "359.764.7139"
     })
 
     NewYork.houses.push(house10, house11, house12)
