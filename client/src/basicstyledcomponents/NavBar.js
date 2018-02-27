@@ -1,18 +1,17 @@
-import React, {Component} from 'react'
+import React from 'react'
 import styled from 'styled-components'
-
 const NavBar = () => {
   return (
     <Nav>
       {/* <label for="toggle">&#9776;</label> */}
       {/* <input type="checkbox" id="toggle"/> */}
       <div>
-        <h1>HomeKoming</h1>
+        <h1>HomeComing</h1>
       <a href="/">Home</a>
       <a href="/cities">Cities</a>
-      <a href="#">Map</a>
+      <a href="no where">Map</a>
       <a href="/about">About</a>
-      <a href="#"><span>Become a Host?</span></a>
+      <a href="/hosting"><span>Become a Host?</span></a>
       </div>
     </Nav>
   );
@@ -30,11 +29,12 @@ display:flex;
 justify-content:center;
 align-items:center; 
 a{ 
+  
   clear:right;
   text-decoration: none;
   color:gray;
   margin: 0 10px;
-  /* line-height: 70px; */
+  line-height: 70px;
   }
   span{
     color:red;
