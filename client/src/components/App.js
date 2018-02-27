@@ -1,11 +1,13 @@
 import React, {Component} from 'react';
-import {BrowserRouter as Router, Route, Link, Switch} from 'react-router-dom'
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 import axios from 'axios'
 //importing components
 import Homepage from './HomePage'
 import AboutPage from './AboutPage'
 import CitiesList from './CitiesList'
 import SingleCity from './SingleCity'
+// import HouseList from './HouseList'
+import HostForm from './HostForm'
 
 //import styled components
 import NavBar from '../basicstyledcomponents/NavBar'
@@ -65,7 +67,9 @@ class App extends Component {
           <Route exact path="/" component={Homepage}/>
           <Route exact path="/about" component={AboutPage} />
           <Route exact path="/cities" component={CityData}/>
-          <Route exact path="/cities/cityId" component={SingleCity}/>
+          <Route exact path="/cities/:cityId" component={SingleCity}/>
+          {/* <Route exact path="/cities/cityId/house" component={HouseList}/> */}
+          <Route exact path="/hosting" component={HostForm}/>
 
         </Switch>
       </Router>
