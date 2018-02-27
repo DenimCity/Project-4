@@ -1,11 +1,31 @@
 import React, { Component } from 'react'
-
+import City from '../components/City'
+import {Link} from 'react-router-dom'
 export default class CitiesList extends Component {
+  
+   
   render() {
+    
+    const cityList = this.props.CityInfo.map((city,index)=> {
+      return (<City 
+        key={index}
+        photo={city.photo}
+        state={city.state}
+        country={city.country}
+        id={city._id}
+        
+        />)
+
+
+      })
+      console.log('here is some data', cityList)
+
+  
     return (
       <div>
-        <h1>hello from the cities list page</h1>
+      <div>{cityList} </div> 
       </div>
     )
   }
 }
+
