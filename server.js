@@ -32,8 +32,12 @@ app.use('/homecoming/user', user)
 
 const city = require('./routes/cityController')
 app.use('/homecoming/city', city)
-
 // console.log('phase 2 route server file', city)
+
+const event = require('./routes/eventController')
+app.use('/homecoming/events', event)
+console.log(`you have hit the events api route `)
+
 
 const PORT = process.env.PORT || 4000;
 app.listen(PORT, () => {
