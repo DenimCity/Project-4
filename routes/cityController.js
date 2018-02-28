@@ -1,6 +1,8 @@
 const express = require('express')
 const City = require('../db/models/City')
+const House = require('../db/models/House')
 const router = express.Router({mergeParams: true})
+// const bodyParser = require('body-parser')
 
 //to view all the cities
 router.get('/', async(request, response) => {
@@ -46,19 +48,25 @@ router.get('/:cityId/houses', (request, response) => {
     })
 })
 
+
 //post a new house route in that city
-router.post('/:cityId/new/house', async(request, response) => {
-  console.log(`we hit the post route forcity`)
+router.post ('/:cityId/houses/new', async (request,response)=> {
+console.log('hit the new house route')
   try {
-    const cityId = request.params.cityId
-    console.log('we found the city affilicated with this post ', cityId)
-    const newCity = await City.create(request.body)
-    console.log(`the new data coming in should look like${newCity} `)
-    response.json(newCity)
+    const newHouse = new House(request.body)
+    // console.log('here is the new house ', newHouse)
+
+    const city = await City.findById(request.params.cityId)
+    console.log('we found the city ',city )
+    city.houses.push(newHouse)
+    const saved = await city.save()
+    response.json(saved)
   } catch (error) {
-    console.log(`post a new house route in that city route error ${error}`);
+    console.log(error)
   }
 })
+
+
 //grab that one individual house by Id
 router.get('/:cityId/houses/:houseId', (request, response) => {
   const cityId = request.params.cityId
