@@ -7,14 +7,15 @@ import AboutPage from './AboutPage'
 import CitiesList from './CitiesList'
 import SingleCity from './SingleCity'
 import HouseList from './HouseList'
-import HostForm from './HostForm'
+import HouseForm from './HouseForm'
+import MeetUpEvent from './MeetUpEvent'
 
 //import styled components
 import NavBar from '../basicstyledcomponents/NavBar'
 class App extends Component {
   state = {
     users: {},
-    cities: [],
+    cities: []
   }
   userFromServer = () => {
     // console.log('here from the user data route');
@@ -37,20 +38,19 @@ class App extends Component {
       })
   }
 
+ 
+
   
-  
+
   componentWillMount = () => {
     this.userFromServer()
     this.citiesFromServer()
-    
-    
   }
+
   render() {
     const CityData = (props) => (<CitiesList {...props} CityInfo={this.state.cities}/>)
-    // const OneCityData = () =>(<SingleCity houseInfo={this.state.cities}  />)
-    // console.log(`the city is being transfered'${CityData }`)
-    // console.log(`the city is being transfered'${OneCityData }`)
-    
+    const HousesData = (props) => (<HouseList {...props} />)
+
     return (
       <div>
         <NavBar/>
@@ -59,8 +59,9 @@ class App extends Component {
             <Route exact path="/" component={Homepage}/>
             <Route exact path="/about" component={AboutPage}/>
             <Route exact path="/cities" component={CityData}/>
-            <Route exact path="/cities/:cityId/houses" component={HouseList}/>
-            <Route exact path="/hosting" component={HostForm}/>
+            <Route exact path="/cities/:cityId/houses" component={HousesData}/>
+            <Route exact path="/cities/:cityId/meetup" component={MeetUpEvent}/>
+            <Route exact path="/hosting" component={HouseForm}/>
           </Switch>
         </Router>
       </div>
