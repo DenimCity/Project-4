@@ -6,7 +6,7 @@ import Homepage from './HomePage'
 import AboutPage from './AboutPage'
 import CitiesList from './CitiesList'
 import SingleCity from './SingleCity'
-// import HouseList from './HouseList'
+import HouseList from './HouseList'
 import HostForm from './HostForm'
 
 //import styled components
@@ -14,10 +14,8 @@ import NavBar from '../basicstyledcomponents/NavBar'
 class App extends Component {
   state = {
     users: {},
-    cities:[],
-    events: []
+    cities: [],
   }
-
   userFromServer = () => {
     // console.log('here from the user data route');
     axios
@@ -28,54 +26,45 @@ class App extends Component {
         this.setState({users})
       })
   }
-
   citiesFromServer = () => {
-    // console.log(`here from the citie server api call`)
+    // console.log(`here from the city server api call in react`)
     axios
-      .get('/homecoming/city/')
+      .get(`/homecoming/city/`)
       .then(response => {
         const cities = response.data
-        // console.log('cities data', cities)
+        // console.log(`all cities data ${cities}`)
         this.setState({cities})
       })
   }
 
-  eventsApi = () => {
-    // console.log(`here from third party api`)
-    axios
-      .get('')
-      .then(response => {
-        const events = response.data
-        this.setState({events})
-      })
-  }
-
+  
+  
   componentWillMount = () => {
     this.userFromServer()
     this.citiesFromServer()
+    
+    
   }
-
   render() {
-    const CityData = (props) => (<CitiesList CityInfo={this.state.cities}{...props}/>)
+    const CityData = (props) => (<CitiesList {...props} CityInfo={this.state.cities}/>)
+    // const OneCityData = () =>(<SingleCity houseInfo={this.state.cities}  />)
     // console.log(`the city is being transfered'${CityData }`)
+    // console.log(`the city is being transfered'${OneCityData }`)
+    
     return (
       <div>
         <NavBar/>
-      <Router>
-        <Switch>
-
-          <Route exact path="/" component={Homepage}/>
-          <Route exact path="/about" component={AboutPage} />
-          <Route exact path="/cities" component={CityData}/>
-          <Route exact path="/cities/:cityId" component={SingleCity}/>
-          {/* <Route exact path="/cities/cityId/house" component={HouseList}/> */}
-          <Route exact path="/hosting" component={HostForm}/>
-
-        </Switch>
-      </Router>
+        <Router>
+          <Switch>
+            <Route exact path="/" component={Homepage}/>
+            <Route exact path="/about" component={AboutPage}/>
+            <Route exact path="/cities" component={CityData}/>
+            <Route exact path="/cities/:cityId/houses" component={HouseList}/>
+            <Route exact path="/hosting" component={HostForm}/>
+          </Switch>
+        </Router>
       </div>
     );
   }
 }
-
 export default App;
