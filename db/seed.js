@@ -28,6 +28,7 @@ mongoose
 
     const Atlanta = new City({city: "Atlanta", state: "Georgia", country: "US", photo: "https://i.imgur.com/jGyldh4.jpg"})
     const house1 = new House({
+      city_name:"Atlanta",
       house_photo: "https://a0.muscache.com/im/pictures/96fef64d-1cdf-488b-a817-ee7f85e40219.jpg?aki_policy=xx_large",
       amenities: "Kitchen, Cable TV, Wifi, Indoor fireplace",
       description: `5 bedrooms, 3.5 baths, living room, formal dining, informal dining, den, living room, foyer, gourmet kitchen, and laundry room.`,
@@ -43,6 +44,7 @@ mongoose
     })
 
     const house2 = new House({
+      city_name:"Atlanta",
       house_photo: "http://www.clipartlord.com/wp-content/uploads/2014/04/egg4.png",
       amenities: "Dreyer",
       description: "Nice",
@@ -57,6 +59,7 @@ mongoose
       owner_phone: "359.764.7139"
     })
     const house3 = new House({
+      city_name:"Atlanta",
       house_photo: "http://www.clipartlord.com/wp-content/uploads/2014/04/egg4.png",
       amenities: "Dreyer",
       description: "Nice",
@@ -75,6 +78,7 @@ mongoose
 
     const Miami = new City({city: "Miami", state: "Florida", country: "US", photo: "https://i.imgur.com/e5p5fnD.jpg"})
     const house4 = new House({
+      city_name:"Miami",
       house_photo: "http://www.clipartlord.com/wp-content/uploads/2014/04/egg4.png",
       amenities: "Dreyer",
       description: "Nice",
@@ -90,6 +94,7 @@ mongoose
     })
 
     const house5 = new House({
+      city_name:"Miami",
       house_photo: "http://www.clipartlord.com/wp-content/uploads/2014/04/egg4.png",
       amenities: "Dreyer",
       description: "Nice",
@@ -104,6 +109,7 @@ mongoose
       owner_phone: "359.764.7139"
     })
     const house6 = new House({
+      city_name:"Miami",
       house_photo: "http://www.clipartlord.com/wp-content/uploads/2014/04/egg4.png",
       amenities: "Dreyer",
       description: "Nice",
@@ -123,6 +129,7 @@ mongoose
 
     const LA = new City({city: "Los Angelous", state: "California", country: "US", photo: "http://www.mbdalosangeles.org/uploads/1/0/6/0/10602258/hdr-losangeles1_orig.jpg"})
     const house7 = new House({
+      city_name:"Los Angeles",
       house_photo: "http://www.clipartlord.com/wp-content/uploads/2014/04/egg4.png",
       amenities: "Dreyer",
       description: "Nice",
@@ -138,6 +145,7 @@ mongoose
     })
 
     const house8 = new House({
+      city_name:"Los Angeles",
       house_photo: "http://www.clipartlord.com/wp-content/uploads/2014/04/egg4.png",
       amenities: "Dreyer",
       description: "Nice",
@@ -152,6 +160,7 @@ mongoose
       owner_phone: "359.764.7139"
     })
     const house9 = new House({
+      city_name:"Los Angeles",
       house_photo: "http://www.clipartlord.com/wp-content/uploads/2014/04/egg4.png",
       amenities: "Dreyer",
       description: "Nice",
@@ -166,11 +175,12 @@ mongoose
       owner_phone: "359.764.7139"
     })
 
-    LA.houses.push(house6, house7, house9)
+    LA.houses.push(house7, house8, house9)
 
 
     const NewYork = new City({city: "New York City", state: "New York", country: "US", photo: "https://i.imgur.com/VKWt9BC.jpg"})
     const house10 = new House({
+      city_name:"New York",
       house_photo: "http://www.clipartlord.com/wp-content/uploads/2014/04/egg4.png",
       amenities: "Dreyer",
       description: "Nice",
@@ -186,6 +196,7 @@ mongoose
     })
 
     const house11 = new House({
+      city_name:"New York",
       house_photo: "http://www.clipartlord.com/wp-content/uploads/2014/04/egg4.png",
       amenities: "Dreyer",
       description: "Nice",
@@ -200,6 +211,7 @@ mongoose
       owner_phone: "359.764.7139"
     })
     const house12 = new House({
+      city_name:"New York",
       house_photo: "http://www.clipartlord.com/wp-content/uploads/2014/04/egg4.png",
       amenities: "Dreyer",
       description: "Nice",
