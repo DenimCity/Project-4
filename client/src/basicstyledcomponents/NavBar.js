@@ -9,7 +9,7 @@ const NavBar = () => {
         <h1>HomeComing</h1>
       <a href="/">Home</a>
       <a href="/cities">Cities</a>
-      <a href="no where">Map</a>
+      <a href="/cities/:cityId/meetup/">Events</a>
       <a href="/about">About</a>
       <a href="/hosting"><span>Become a Host?</span></a>
       </div>
