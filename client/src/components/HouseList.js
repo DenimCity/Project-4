@@ -1,10 +1,13 @@
-import React, { Component } from 'react'
+import React, {Component} from 'react'
 
 export default class HouseList extends Component {
   render() {
+    console.log('props', this.props.houses)
     return (
       <div>
-        hi from the house HouseList
+        <div>
+          <h1>{this.amenities}</h1>
+        </div>
       </div>
     )
   }

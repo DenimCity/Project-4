@@ -20,6 +20,7 @@ const EventSchema = new Schema({
 })
 
 const HouseSchema = new Schema({
+  city_name:{type:String},
   house_photo: {
     type: String
   },
