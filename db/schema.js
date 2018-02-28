@@ -5,14 +5,21 @@ mongoose.Promise = global.Promise
 // console.log("hello from schema folder")
 
 const EventSchema = new Schema({
-  owner: {
-    type: String
+  name: {
+    type: String,
+    unique:true,
+    minlength: [5, 'Name must be 5 Characters long']
+  },
+  description: {
+    type: String,
+    required:true,
+    minlength:[5, 'Description must be 5 characters long']
   },
   photo: {
     type: String
   },
-  phone: {
-    type: String
+  category:{
+    type: String,
   }
 }, {
   timestamps: {},
@@ -20,7 +27,9 @@ const EventSchema = new Schema({
 })
 
 const HouseSchema = new Schema({
-  city_name:{type:String},
+  city_name: {
+    type: String
+  },
   house_photo: {
     type: String
   },
@@ -90,9 +99,8 @@ const CitySchema = new Schema({
 },)
 
 const UserSchema = new Schema({
-  name: {
-    type: String
-  },
+  name: {type: String
+},
   email: {
     type: String
   },
