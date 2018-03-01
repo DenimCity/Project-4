@@ -14,6 +14,7 @@ app.get('/', (req,res) => {
 mongoose.Promise = global.Promise;
 mongoose.connect(process.env.MONGODB_URI); 
 
+
 const connection = mongoose.connection;
 connection.on('connected', () => {
   console.log('Mongoose Connected Successfully');    
@@ -36,7 +37,13 @@ app.use('/homecoming/city', city)
 
 const event = require('./routes/eventController')
 app.use('/homecoming/events', event)
-console.log(`you have hit the events api route `)
+// console.log(`you have hit the events api route `)
+
+
+const meetUp = require('./routes/meetupController')
+app.use('/homecoming/meetups', meetUp)
+// console.log('you hit the meetup route')
+
 
 
 const PORT = process.env.PORT || 4000;
