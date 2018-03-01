@@ -1,33 +1,59 @@
 import React, {Component} from 'react'
 import axios from 'axios'
+import MeetUpEventInfo from './MeetUpEventInfo'
 
 export default class MeetUpEvents extends Component {
 
-  // state = {
-  //   events: []
-  // }
+  state = {
+    atlEvents: [],
+    newYorkEvents: [],
+    miamiEvents: [],
+    laEvents: []
+  }
 
-  // meetUpEvents = () => {
+  atlantaApiCall= () => {
+    axios.get('homecoming/meetups/atlanta').then(response=>{
+      const atlEvents = response.data
+      console.log('data fora atlanta ', atlEvents )
+      this.setState({atlEvents})
+    })
+    
+  }
+  newYorkApiCall= () => {
+axios.get('/homecoming/meetups/newyork').then(response=> {
+  const newYorkEvents = response.data
+  this.setState({newYorkEvents})
+})
+    
+  }
+  miamiApiCall= () => {
+axios.get('/homecoming/meetusp/miami').then(response=>{
+  const miamiEvents = response.data
+  this.setState({miamiEvents})
+})
+    
+  }
+  losAngelesApiCall= () => {
+axios.get('homecoming/meetups/la').then(response=>{
+  const laEvents = response.data
+  this.setState({laEvents})
+})
+    
+  }
 
-  //   const api_key = process.env.REACT_APP_MEETUP_KEY
-  //   console.log(`api key is here => ${api_key}`);
-  //   axios
-  //     .get(`https://api.meetup.com/find/groups?key=${api_key}&photo-host=public&location=Atlanta%2CGa&page=20&sig_id=245595678&sig=6cf7a038a4f9a98787a82fcf8aae96915e2a55eb`)
-  //     .then(response => {
-  //       const events = response.data
-  //       console.log('data from meet up', events)
-  //       this.setState({events})
-  //     })
-  // }
-  // componentWillMount = () => {
-  //   this.meetUpEvents()
-  // }
+
+
+  componentWillMount = () => {
+  this.atlantaApiCall()
+  }
 
   render() {
+   
 
     return (
       <div>
-        hello from the meetup events page
+        <MeetUpEventInfo atlEvents={this.state.atlEvents}/>
+        <h1>data for events </h1>
       </div>
     )
   }
