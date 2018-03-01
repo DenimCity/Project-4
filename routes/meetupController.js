@@ -1,6 +1,4 @@
 const express = require('express')
-// const User = require('../db/models/User')
-const fetch = require('node-fetch')
 const router = express.Router()
 // client_id=mbi7l1jrg51rv7lbjaf8dfpl6b
 // &client_secret=tg27hcatj9p4fsq1qv5o47c4qf &grant_type=refresh_token
@@ -16,9 +14,7 @@ router.get('/', async (request, response) => {
  
   //   .then(json => console.log(json))
   try {
-    fetch(`github.com`)
-      .then(response.json())
-      .then(json => console.log(json))
+   
     
   } catch (error) {
     console.log('error', error);
