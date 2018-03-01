@@ -84,6 +84,6 @@ const HouseWrapper = styled.div`
 border:solid 1px red;
 display:flex;
 flex-wrap:wrap;
-max-width: auto;
+justify-content: center;
 
 `
