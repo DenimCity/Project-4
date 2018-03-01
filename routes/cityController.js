@@ -2,11 +2,10 @@ const express = require('express')
 const City = require('../db/models/City')
 const House = require('../db/models/House')
 const router = express.Router({mergeParams: true})
-// const bodyParser = require('body-parser')
 
-//to view all the cities
+
 router.get('/', async(request, response) => {
-  console.log('hit the get all cities route')
+  // console.log('hit the get all cities route')
   try {
     const cities = await City.find()
     response.json(cities)
@@ -26,18 +25,17 @@ router.get('/:cityId', async(request, response) => {
   } catch (error) {
     console.log(`to get one pecific city route error ${error}`);
   }
-}) 
-
+})
 
 //to get one specific cities houses
 router.get('/:cityId/houses', (request, response) => {
   console.log('hit the cities houses route')
   const cityId = request.params.cityId
   console.log(`line 33, the specific city hit is => ${cityId}`)
-  // const house = request.params.houses
-  // console.log('house data line 35', house )
+  // const house = request.params.houses console.log('house data line 35', house )
 
-  City.findById(cityId)
+  City
+    .findById(cityId)
     .then((city) => {
       const houses = city.houses
       console.log(`line  40: houses in the list are => ${houses}`);
@@ -48,52 +46,53 @@ router.get('/:cityId/houses', (request, response) => {
     })
 })
 
-
 //post a new house route in that city
-router.post ('/:cityId/houses/new', async (request,response)=> {
-console.log('hit the new house route')
+router.post('/:cityId/houses/new', async(request, response) => {
+  console.log('hit the new house route')
   try {
     const newHouse = new House(request.body)
     // console.log('here is the new house ', newHouse)
 
     const city = await City.findById(request.params.cityId)
-    console.log('we found the city ',city )
-    city.houses.push(newHouse)
+    // console.log('we found the city ', city)
+    city
+      .houses
+      .push(newHouse)
     const saved = await city.save()
     response.json(saved)
   } catch (error) {
-    console.log(error)
+    // console.log(error)
   }
 })
-
 
 //grab that one individual house by Id
-router.get('/:cityId/houses/:houseId', (request, response) => {
-  const cityId = request.params.cityId
-  console.log(`we grabbed the city id ${cityId}`)
-  const houseId = request.params.houseId
-  console.log(`whe grabbed the house by Id ${houseId}`)
+router.get('/:cityId/houses/:houseId', async(request, response) => {
+  try {
+    const cityId = request.params.cityId
+    // console.log(`we grabbed the city id ${cityId}`)
+    const houseId = request.params.houseId
+    // console.log(`whe grabbed the house by Id ${houseId}`)
+    const city = await City.findById(cityId)
+    response.json(city.houses.id(houseId))
+  } catch (error) {
+    // console.log(`//grab that one individual house by Id route error${error}`);
+  }
 
-  City
-    .findById(cityId)
-    .then((city) => {
-      const house = city.houseId(houseId)
-      response.json(house)
-    })
-    .catch((error) => {
-      console.log(`//grab that one individual house by Id route error${error}`);
-    })
 })
+
 //delete a house in that one specific route city
-router.delete('/:cityId/house/:houseId/delete', async(request, response) => {
+router.delete('/:cityId/houses/:houseId/delete', async (request, response) => {
   console.log(`we hit the delete route`)
   try {
-    const houseToDelete = await City.findByIdAndRemove(request.params.houseId)
-    console.log(`we found the house to delete the house it should be=>, ${houseToDelete}`)
+    await House.findByIdAndRemove(request.params.houseId)
+    response.sendStatus('something good happen')
+    response.json(city.houses.id(houseId))
+    // const houseToDelete = await House.findByIdAndRemove(request.params.houseId)
+    console.log('we found the house to delete the house it should be=>',houseToDelete)
   } catch (error) {
-    console.log(`delete a house in that one specific route city route error ${error}`);
+    console.log('delete a house error', error);
+    response.sendStatus('400 error')
   }
 })
-
 
 module.exports = router
