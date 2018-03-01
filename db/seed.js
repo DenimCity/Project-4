@@ -2,6 +2,7 @@ require('dotenv').config()
 const City = require('./models/City')
 const User = require('./models/User')
 const House = require('./models/House')
+const Event = require('./models/Event')
 const mongoose = require('mongoose')
 
 // connect to database
@@ -53,7 +54,8 @@ const house2 = new House({
   house_photo: "https://a0.muscache.com/im/pictures/32956562/3eefc762_original.jpg?aki_policy=x_" +
       "large",
   amenities: "Wifi, Cable, Gym",
-  description: "This condo is an exceptional retreat in the heart of the city and provides superb access to the city's premier attractions!",
+  description: "This condo is an exceptional retreat in the heart of the city and provides super" +
+      "b access to the city's premier attractions!",
   address: "7954 Maryse IslandEllie Overpass",
   longitude: '33.8463° N',
   latitude: '84.3621° W',
@@ -73,7 +75,8 @@ const house3 = new House({
   city_name: "Atlanta",
   house_photo: "http://www.clipartlord.com/wp-content/uploads/2014/04/egg4.png",
   amenities: "Washer,Dryer, Cable",
-  description: "This 185 square foot gem sits in our Cabbagetown backyard. A perfect retreat in the middle of Intown Atlanta. ",
+  description: "This 185 square foot gem sits in our Cabbagetown backyard. A perfect retreat in " +
+      "the middle of Intown Atlanta. ",
   address: "476 Leuschke TunnelEllie Overpass",
   longitude: '33.8804° N',
   latitude: '84.4687° W',
@@ -277,6 +280,21 @@ const Jean = new User({
   isHost: true
 })
 
+const test = new Event({
+name:"test1",
+description:"testing2",
+photo:"testingpic",
+category:"testing category"
+})
+
+
+Event
+  .remove({})
+  .then(() => {
+    console.log(`saved => test`)
+    return test.save()
+
+  })
 User
   .remove({})
   .then(() => {
@@ -284,8 +302,10 @@ User
     return Jean.save()
   })
 
-  House.remove({}).then(()=>{
-    console.log('all houses deleted');
+House
+  .remove({})
+  .then(() => {
+    console.log('deleted => houses');
   })
 
 City
