@@ -2,9 +2,6 @@ const express = require('express')
 const Event = require('../db/models/Event')
 const router = express.Router({mergeParams: true})
 
-// console.log(`hit from the event controller `);
-
-
 router.get('/', async (request, response)=>{
 console.log(`we hit the view app events routes`)
 try {
@@ -13,11 +10,8 @@ try {
 } catch (error) {
   console.log('could not obtain events',error)
   response.json('postman: result error')
-  
 }
 })
-
-
 
 //post a new event 
 router.post('/create', async(request, response) => {
@@ -32,7 +26,6 @@ router.post('/create', async(request, response) => {
   }
 })
 
-
 router.delete('/:eventsId/delete', async (response, request)=> {
   console.log(`here from the delete route`)
   try {
@@ -40,12 +33,8 @@ router.delete('/:eventsId/delete', async (response, request)=> {
     console.log('we grabbed teh event Id', event)
     response.json(event)
   } catch (error) {
-    console.log('could not delete',error )
-    // response.json('postman: delete error')
-    
+    console.log('could not delete',error )  
   }
-
-
 })
 
 
@@ -53,6 +42,4 @@ router.patch('/eventId', async (response, request)=>{
 
 
 })
-
-
 module.exports = router
