@@ -26,7 +26,12 @@ mongoose
 
 // seed for cities
 
-const Atlanta = new City({city: "Atlanta", state: "Georgia", country: "US", photo: "https://i.imgur.com/jGyldh4.jpg"})
+const Atlanta = new City({
+  name: "Atlanta", state: "Georgia", country: "US", photo: "https://i.imgur.com/jGyldh4.jpg"})
+
+
+
+
 const house1 = new House({
   city_name: "Atlanta",
   house_photo: "https://a0.muscache.com/im/pictures/96fef64d-1cdf-488b-a817-ee7f85e40219.jpg?aki" +
@@ -96,7 +101,7 @@ Atlanta
   .houses
   .push(house1, house2, house3)
 
-const Miami = new City({city: "Miami", state: "Florida", country: "US", photo: "https://i.imgur.com/e5p5fnD.jpg"})
+const Miami = new City({name: "Miami", state: "Florida", country: "US", photo: "https://i.imgur.com/e5p5fnD.jpg"})
 const house4 = new House({
   city_name: "Miami",
   house_photo: "http://www.clipartlord.com/wp-content/uploads/2014/04/egg4.png",
@@ -154,7 +159,7 @@ Miami
   .houses
   .push(house4, house5, house6)
 
-const LA = new City({city: "Los Angelous", state: "California", country: "US", photo: "http://www.mbdalosangeles.org/uploads/1/0/6/0/10602258/hdr-losangeles1_orig.jpg"})
+const LA = new City({name: "Los Angelous", state: "California", country: "US", photo: "http://www.mbdalosangeles.org/uploads/1/0/6/0/10602258/hdr-losangeles1_orig.jpg"})
 const house7 = new House({
   city_name: "Los Angeles",
   house_photo: "http://www.clipartlord.com/wp-content/uploads/2014/04/egg4.png",
@@ -212,7 +217,7 @@ LA
   .houses
   .push(house7, house8, house9)
 
-const NewYork = new City({city: "New York City", state: "New York", country: "US", photo: "https://i.imgur.com/VKWt9BC.jpg"})
+const NewYork = new City({name: "New York City", state: "New York", country: "US", photo: "https://i.imgur.com/VKWt9BC.jpg"})
 const house10 = new House({
   city_name: "New York",
   house_photo: "http://www.clipartlord.com/wp-content/uploads/2014/04/egg4.png",
