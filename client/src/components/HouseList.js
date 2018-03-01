@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import House from './House'
 import HouseForm from '../components/HouseForm'
+import styled from 'styled-components'
 import axios from 'axios'
 export default class HouseList extends Component {
 
@@ -47,11 +48,12 @@ export default class HouseList extends Component {
     houses.push(newHouse)
     this.setState({houses})
   }
-
-  deleteAHouse = async(houseId) => {
-    console.log('we hit the delete route')
-    const response = await axios.post()
-  }
+// working on delete route
+  //
+  // deleteAHouse = async(houseId) => {
+  //   console.log('we hit the delete route')
+  //   const response = await axios.post()
+  // }
 
   render() {
     const makeNewHouse = () => (<HouseForm createHouse={this.createAHouse}/>)
@@ -62,11 +64,26 @@ export default class HouseList extends Component {
         return (<House key={index} house={house}/>)
       })
     return (
-      <div>
-        <div>
-          house list! {housesList}
-        </div>
-      </div>
+      <HouseWrapper>
+        <HouseContainer>
+          {housesList}
+        </HouseContainer>
+      </HouseWrapper>
     )
   }
 }
+
+
+const HouseContainer = styled.div`
+max-width: 20rem;
+border: 1px solid black;
+
+`
+
+const HouseWrapper = styled.div`
+border:solid 1px red;
+display:flex;
+flex-wrap:wrap;
+max-width: auto;
+
+`
