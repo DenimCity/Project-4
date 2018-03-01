@@ -5,10 +5,11 @@ import axios from 'axios'
 import Homepage from './HomePage'
 import AboutPage from './AboutPage'
 import CitiesList from './CitiesList'
-import SingleCity from './SingleCity'
+// import SingleCity from './SingleCity'
 import HouseList from './HouseList'
 import HouseForm from './HouseForm'
 import MeetUpEvent from './MeetUpEvent'
+import SignIn from './SignIn'
 
 //import styled components
 import NavBar from '../basicstyledcomponents/NavBar'
@@ -60,8 +61,10 @@ class App extends Component {
             <Route exact path="/about" component={AboutPage}/>
             <Route exact path="/cities" component={CityData}/>
             <Route exact path="/cities/:cityId/houses" component={HousesData}/>
-            <Route exact path="/cities/:cityId/meetup" component={MeetUpEvent}/>
+            <Route exact path="/meetups" component={MeetUpEvent}/>
             <Route exact path="/hosting" component={HouseForm}/>
+            <Route exact path="/signin" component={SignIn}/>
+
           </Switch>
         </Router>
       </div>
