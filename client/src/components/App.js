@@ -8,7 +8,7 @@ import CitiesList from './CitiesList'
 // import SingleCity from './SingleCity'
 import HouseList from './HouseList'
 import HouseForm from './HouseForm'
-import MeetUpEvent from './MeetUpEvent'
+import MeetUpApiCall from './MeetUpApi/MeetUpApiCall'
 import SignIn from './SignIn'
 
 //import styled components
@@ -61,7 +61,7 @@ class App extends Component {
             <Route exact path="/about" component={AboutPage}/>
             <Route exact path="/cities" component={CityData}/>
             <Route exact path="/cities/:cityId/houses" component={HousesData}/>
-            <Route exact path="/meetups" component={MeetUpEvent}/>
+            <Route exact path="/meetups" component={MeetUpApiCall}/>
             <Route exact path="/hosting" component={HouseForm}/>
             <Route exact path="/signin" component={SignIn}/>
 
