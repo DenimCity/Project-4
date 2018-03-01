@@ -7,6 +7,7 @@ mongoose.Promise = global.Promise
 const EventSchema = new Schema({
   name: {
     type: String,
+    required:true,
     unique:true,
     minlength: [5, 'Name must be 5 Characters long']
   },
