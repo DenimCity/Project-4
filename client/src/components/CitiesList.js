@@ -1,8 +1,6 @@
 import React, {Component} from 'react'
 import City from '../components/City'
-import HouseList from './HouseList'
-import {Link} from 'react-router-dom'
-import axios from 'axios'
+// import HouseList from './HouseList'
 export default class CitiesList extends Component {
 
 
@@ -13,6 +11,7 @@ export default class CitiesList extends Component {
       .map((city, index) => {
         return (<City
           key={index}
+          name={city.name}
           photo={city.photo}
           state={city.state}
           country={city.country}
