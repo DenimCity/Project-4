@@ -79,7 +79,7 @@ const HouseSchema = new Schema({
 },)
 
 const CitySchema = new Schema({
-  city: {
+  name: {
     type: String
   },
   state: {
