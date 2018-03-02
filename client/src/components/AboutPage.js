@@ -9,8 +9,8 @@ export default class About extends Component {
         <Wrapper>
           <Word>Sometimes finding housing for internships is a hassle.
           </Word>
-          <Word> Due to the lack of convience, this app was created </Word>
-          <Word>so students can find housing for 2 - 9 months.</Word>
+          <Word>  Due to the lack of convience, we decided to bridge the gap. </Word>
+          <Word>Here students will be able to find housing close to their assigned sites.</Word>
 
           <MediaContainer>
             <div>
@@ -20,7 +20,7 @@ export default class About extends Component {
                 </Word>
               </GoLink>
             </div>
-            <div>
+            <div class="link container">
               <GoLink href="https://medium.com/@JW_Altidor" target="_blank">
                 <Word>
                   <i class="fab fa-medium"></i>
@@ -36,20 +36,19 @@ export default class About extends Component {
   }
 }
 const Word = styled.p `
-font-size:3.5rem;
+font-size: 15px;
 text-align:center;
 
 `
 
 const GoLink = styled.a `
 text-decoration:none;
-color:blue;
+color:orange;
 &:hover{
   color:red;
 }
 
 `
-
 const MediaContainer = styled.div`
 display:flex;
 

@@ -78,3 +78,12 @@ display: flex;
 flex-wrap: wrap;
 justify-content: center;
 ` 
+
+export const LinkTag = styled.a`
+color:red;
+
+&:hover{
+  color:goldenrod;
+}
+
+`
