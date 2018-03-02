@@ -3,15 +3,13 @@ import styled from 'styled-components'
 const NavBar = () => {
   return (
     <Nav>
-      {/* <label for="toggle">&#9776;</label> */}
-      {/* <input type="checkbox" id="toggle"/> */}
       <div>
-        {/* <h1>HomeComing</h1> */}
+        <h1>HomeComing</h1>
       <a href="/">Home</a>
       <a href="/cities">Cities</a>
       <a href="/meetups">Events</a>
       <a href="/about">About</a>
-      <a href="/signin">Sign In</a>
+      {/* <a href="/signin">Sign In</a> */}
       <a href="/hosting"><span>Become a Host?</span></a>
       </div>
     </Nav>
