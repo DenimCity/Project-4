@@ -1,5 +1,4 @@
 import React, {Component} from 'react'
-// import MeetUpSingle from './MeetUpSingle'
 import styled from 'styled-components'
 import { TableWrapper, Table, Column, ColumnTitle, Holder} from '../../basicstyledcomponents/basicComponents'
 
