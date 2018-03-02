@@ -1,6 +1,8 @@
 import React, {Component} from 'react'
 import axios from 'axios'
 import AtlEventInfo from '../MeetUpApi/AtlEventInfo'
+import LaEventInfo from '../MeetUpApi/LaEventInfo'
+import MiamiEventInfo from '../MeetUpApi/MiamiEventInfo'
 import NewYorkEventInfo from '../MeetUpApi/NewYorkEventInfo'
 import {Title} from '../../basicstyledcomponents/basicComponents'
 
@@ -16,7 +18,7 @@ export default class MeetUpApiCalls extends Component {
   atlantaApiCall= () => {
     axios.get('homecoming/meetups/atlanta').then(response=>{
       const atlEvents = response.data
-      console.log('data fora atlanta ', atlEvents )
+      // console.log('data fora atlanta ', atlEvents )
       this.setState({atlEvents})
     })
     
@@ -29,8 +31,9 @@ axios.get('/homecoming/meetups/newyork').then(response=> {
     
   }
   miamiApiCall= () => {
-axios.get('/homecoming/meetusp/miami').then(response=>{
+axios.get('/homecoming/meetups/miami').then(response=>{
   const miamiEvents = response.data
+  // console.log('data fora miami ', miamiEvents )
   this.setState({miamiEvents})
 })
     
@@ -38,31 +41,29 @@ axios.get('/homecoming/meetusp/miami').then(response=>{
   losAngelesApiCall= () => {
 axios.get('homecoming/meetups/la').then(response=>{
   const laEvents = response.data
+  // console.log('data fora los angeles ', laEvents )
   this.setState({laEvents})
 })
     
   }
-
-
-
   componentWillMount = () => {
   this.atlantaApiCall()
   this.newYorkApiCall()
+  this.miamiApiCall()
+  this.losAngelesApiCall()
   }
 
   render() {
-   
-
     return (
       <div>
         <Title>Atlanta Events</Title>
         <AtlEventInfo atlEvents={this.state.atlEvents}/>
         <Title>New York</Title>
         <NewYorkEventInfo newYorkEvents={this.state.newYorkEvents}/>
-        
-
+        <Title>Miami</Title>
+        <MiamiEventInfo miamiEvents={this.state.miamiEvents}/>
         <Title>Los Angeles</Title>
-        <Title>New York</Title>
+        <LaEventInfo laEvents={this.state.laEvents}/>
       </div>
     )
   }
