@@ -47,22 +47,22 @@ axios.get('homecoming/meetups/la').then(response=>{
     
   }
   componentWillMount = () => {
-  // this.atlantaApiCall()
-  // this.newYorkApiCall()
-  // this.miamiApiCall()
-  // this.losAngelesApiCall()
+  this.atlantaApiCall()
+  this.newYorkApiCall()
+  this.miamiApiCall()
+  this.losAngelesApiCall()
   }
 
   render() {
     return (
       <div>
-        <Title>Atlanta Events</Title>
+        <Title>ATL Events</Title>
         <AtlEventInfo atlEvents={this.state.atlEvents}/>
-        <Title>New York</Title>
+        <Title>NY Events</Title>
         <NewYorkEventInfo newYorkEvents={this.state.newYorkEvents}/>
-        <Title>Miami</Title>
+        <Title>MIA Events</Title>
         <MiamiEventInfo miamiEvents={this.state.miamiEvents}/>
-        <Title>Los Angeles</Title>
+        <Title>LA Events</Title>
         <LaEventInfo laEvents={this.state.laEvents}/>
       </div>
     )
