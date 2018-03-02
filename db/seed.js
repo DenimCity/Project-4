@@ -73,12 +73,12 @@ const house2 = new House({
   livingroom: "https://a0.muscache.com/im/pictures/60477982/abc288e8_original.jpg?aki_policy=x_" +
       "large",
   owner: "Diane",
-  photo: "https://i.imgur.com/llS7sCc.jpg",
+  owner_photo: "https://i.imgur.com/llS7sCc.jpg",
   owner_phone: "1-738-235-4434 x65580359.764.7139"
 })
 const house3 = new House({
   city_name: "Atlanta",
-  house_photo: "http://www.clipartlord.com/wp-content/uploads/2014/04/egg4.png",
+  house_photo: "https://a0.muscache.com/im/pictures/59329664/e5e7ca32_original.jpg?aki_policy=x_large",
   amenities: "Washer,Dryer, Cable",
   description: "This 185 square foot gem sits in our Cabbagetown backyard. A perfect retreat in " +
       "the middle of Intown Atlanta. ",
@@ -94,7 +94,7 @@ const house3 = new House({
   livingroom: "https://a0.muscache.com/im/pictures/d8c9125c-2c0d-4f5b-926d-4ef335cf8e87.jpg?aki" +
       "_policy=x_large",
   owner: "Ninti",
-  photo: "https://i.imgur.com/S3sGKnu.jpg",
+  owner_photo: "https://i.imgur.com/S3sGKnu.jpg",
   owner_phone: "(299) 969-4776 x3123359.764.7139"
 })
 Atlanta
@@ -104,54 +104,54 @@ Atlanta
 const Miami = new City({name: "Miami", state: "Florida", country: "US", photo: "https://i.imgur.com/e5p5fnD.jpg"})
 const house4 = new House({
   city_name: "Miami",
-  house_photo: "http://www.clipartlord.com/wp-content/uploads/2014/04/egg4.png",
-  amenities: "Dreyer",
+  house_photo: "https://a0.muscache.com/im/pictures/49939893/f83fce6c_original.jpg?aki_policy=xx_large",
+  amenities: "Free parking, Wifi, Cable TV",
   description: "Nice",
-  address: "Ellie Overpass",
+  address: "Bernard TerraceEllie Overpass",
   longitude: '',
   latitude: '',
   zip: "48099-2774",
-  price: "$600",
+  price: "$500",
   kitchen: "Dirty",
   bathroom: "nice",
   livingroom: "cool",
-  owner: "Tony",
-  photo: "http://www.clipartlord.com/wp-content/uploads/2014/04/egg4.png",
+  owner: "Brenda",
+  owner_photo: "https://i.imgur.com/f3WIKxA.jpg",
   owner_phone: "359.764.7139"
 })
 
 const house5 = new House({
   city_name: "Miami",
-  house_photo: "http://www.clipartlord.com/wp-content/uploads/2014/04/egg4.png",
-  amenities: "Dreyer",
+  house_photo: "https://a0.muscache.com/im/pictures/36873442/2eaf770b_original.jpg?aki_policy=xx_large",
+  amenities: "Wifi, Laptop friendly workspace, Elevator",
   description: "Nice",
-  address: "Ellie Overpass",
+  address: "1610 Raynor FieldsEllie Overpass",
   longitude: '',
   latitude: '',
   zip: "48099-2774",
-  price: "$600",
+  price: "$800",
   kitchen: "Dirty",
   bathroom: "nice",
   livingroom: "cool",
-  owner: "Tony",
-  photo: "http://www.clipartlord.com/wp-content/uploads/2014/04/egg4.png",
+  owner: "Michelle",
+  owner_photo: "https://i.imgur.com/lko39vz.jpg",
   owner_phone: "359.764.7139"
 })
 const house6 = new House({
   city_name: "Miami",
-  house_photo: "http://www.clipartlord.com/wp-content/uploads/2014/04/egg4.png",
-  amenities: "Dreyer",
+  house_photo: "https://a0.muscache.com/im/pictures/88b75729-43df-4126-92ae-adea5df1b6a4.jpg?aki_policy=xx_large",
+  amenities: "Pool, Kitchen, Wifi ",
   description: "Nice",
-  address: "Ellie Overpass",
+  address: "980 Wehner PrairieEllie Overpass",
   longitude: '',
   latitude: '',
   zip: "48099-2774",
-  price: "$600",
+  price: "$1000",
   kitchen: "Dirty",
   bathroom: "nice",
   livingroom: "cool",
-  owner: "Tony",
-  photo: "http://www.clipartlord.com/wp-content/uploads/2014/04/egg4.png",
+  owner: "George",
+  owner_photo: "https://i.imgur.com/Y5LWTra.jpg",
   owner_phone: "359.764.7139"
 })
 
@@ -162,45 +162,45 @@ Miami
 const LA = new City({name: "Los Angelous", state: "California", country: "US", photo: "http://www.mbdalosangeles.org/uploads/1/0/6/0/10602258/hdr-losangeles1_orig.jpg"})
 const house7 = new House({
   city_name: "Los Angeles",
-  house_photo: "http://www.clipartlord.com/wp-content/uploads/2014/04/egg4.png",
-  amenities: "Dreyer",
+  house_photo: "https://a0.muscache.com/im/pictures/a85d04ad-adac-4ed2-951b-b40730d8ea9e.jpg?aki_policy=xx_large",
+  amenities: "Wifi, Kitchen, Wifi ",
   description: "Nice",
-  address: "Ellie Overpass",
+  address: "0235 Zemlak JunctionEllie Overpass",
   longitude: '',
   latitude: '',
   zip: "48099-2774",
-  price: "$600",
+  price: "$1500",
   kitchen: "Dirty",
   bathroom: "nice",
   livingroom: "cool",
-  owner: "Tony",
-  photo: "http://www.clipartlord.com/wp-content/uploads/2014/04/egg4.png",
+  owner: "Jean",
+  owner_photo: "https://i.imgur.com/4hfZoUF.jpg",
   owner_phone: "359.764.7139"
 })
 
 const house8 = new House({
   city_name: "Los Angeles",
-  house_photo: "http://www.clipartlord.com/wp-content/uploads/2014/04/egg4.png",
-  amenities: "Dreyer",
+  house_photo: "https://a0.muscache.com/im/pictures/75756707/5d76182c_original.jpg?aki_policy=xx_large",
+  amenities: "Pool, Kitchen, Wifi",
   description: "Nice",
-  address: "Ellie Overpass",
+  address: "05311 Mariana PineEllie Overpass",
   longitude: '',
   latitude: '',
   zip: "48099-2774",
-  price: "$600",
+  price: "$300",
   kitchen: "Dirty",
   bathroom: "nice",
   livingroom: "cool",
-  owner: "Tony",
-  photo: "http://www.clipartlord.com/wp-content/uploads/2014/04/egg4.png",
+  owner: "Marco",
+  owner_photo: "https://i.imgur.com/WNpGmAu.jpg",
   owner_phone: "359.764.7139"
 })
 const house9 = new House({
   city_name: "Los Angeles",
-  house_photo: "http://www.clipartlord.com/wp-content/uploads/2014/04/egg4.png",
-  amenities: "Dreyer",
+  house_photo: "https://a0.muscache.com/im/pictures/6459516/40072931_original.jpg?aki_policy=x_large",
+  amenities: "Breakfast, Wifi, Cable Tv",
   description: "Nice",
-  address: "Ellie Overpass",
+  address: "64784 Parker BrooksEllie Overpass",
   longitude: '',
   latitude: '',
   zip: "48099-2774",
@@ -208,8 +208,8 @@ const house9 = new House({
   kitchen: "Dirty",
   bathroom: "nice",
   livingroom: "cool",
-  owner: "Tony",
-  photo: "http://www.clipartlord.com/wp-content/uploads/2014/04/egg4.png",
+  owner: "Leonel",
+  owner_photo: "https://i.imgur.com/uw4FOZv.jpg",
   owner_phone: "359.764.7139"
 })
 
@@ -220,54 +220,54 @@ LA
 const NewYork = new City({name: "New York City", state: "New York", country: "US", photo: "https://i.imgur.com/VKWt9BC.jpg"})
 const house10 = new House({
   city_name: "New York",
-  house_photo: "http://www.clipartlord.com/wp-content/uploads/2014/04/egg4.png",
-  amenities: "Dreyer",
+  house_photo: "https://a0.muscache.com/im/pictures/79096753/78ce1912_original.jpg?aki_policy=xx_large",
+  amenities: "Kitchen, Wifi, Gym",
   description: "Nice",
-  address: "Ellie Overpass",
+  address: "468 Reynolds PlazaEllie Overpass",
   longitude: '',
   latitude: '',
   zip: "48099-2774",
-  price: "$600",
+  price: "$800",
   kitchen: "Dirty",
   bathroom: "nice",
   livingroom: "cool",
-  owner: "Tony",
-  photo: "http://www.clipartlord.com/wp-content/uploads/2014/04/egg4.png",
+  owner: "Shakira",
+  owner_photo: "https://i.imgur.com/6cwZ4Y7.jpg",
   owner_phone: "359.764.7139"
 })
 
 const house11 = new House({
   city_name: "New York",
-  house_photo: "http://www.clipartlord.com/wp-content/uploads/2014/04/egg4.png",
-  amenities: "Dreyer",
+  house_photo: "https://a0.muscache.com/im/pictures/78293381/7710a59f_original.jpg?aki_policy=x_large",
+  amenities: "Elevator, Patio, Wifit",
   description: "Nice",
-  address: "Ellie Overpass",
+  address: "16118 Crooks RoadEllie Overpass",
   longitude: '',
   latitude: '',
   zip: "48099-2774",
-  price: "$600",
+  price: "$700",
   kitchen: "Dirty",
   bathroom: "nice",
   livingroom: "cool",
   owner: "Tony",
-  photo: "http://www.clipartlord.com/wp-content/uploads/2014/04/egg4.png",
+  owner_photo: "https://i.imgur.com/Qj1WVQB.jpg",
   owner_phone: "359.764.7139"
 })
 const house12 = new House({
   city_name: "New York",
-  house_photo: "http://www.clipartlord.com/wp-content/uploads/2014/04/egg4.png",
-  amenities: "Dreyer",
+  house_photo: "https://a0.muscache.com/im/pictures/52748667/bb09b61b_original.jpg?aki_policy=xx_large",
+  amenities: "Washer, Dryer, Kitchen",
   description: "Nice",
-  address: "Ellie Overpass",
+  address: "3234 Johnathan MountainEllie Overpass",
   longitude: '',
   latitude: '',
   zip: "48099-2774",
-  price: "$600",
+  price: "$300",
   kitchen: "Dirty",
   bathroom: "nice",
   livingroom: "cool",
-  owner: "Tony",
-  photo: "http://www.clipartlord.com/wp-content/uploads/2014/04/egg4.png",
+  owner: "Homer",
+  owner_photo: "https://i.imgur.com/sDVPVPl.jpg",
   owner_phone: "359.764.7139"
 })
 

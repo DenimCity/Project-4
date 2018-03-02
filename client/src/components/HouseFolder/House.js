@@ -30,8 +30,9 @@ export default class House extends Component {
           <div>{house.amenities}</div>
           <strong>Address</strong>
           <div>{house.address}</div>
+          <div>{house.price}/month</div>
         </TextAlign>
-        <img width="100%" src={house.owner_photo}/>
+        <img width="100%" height="400px" src={house.owner_photo}/>
         <OwnerInfoWrapper className="ownerInfoWrapper">
           <Container className="container">
             <div>
@@ -54,20 +55,11 @@ export default class House extends Component {
     )
   }
 }
-
-//keys to use later
-
-{/* <div><img width="100%" src={house.kitchen} alt=""/></div>
-<div><img width="100%" src={house.bathroom} alt=""/></div>
-<div><img width="100%" src={house.livingroom} alt=""/></div> */
-}
-
 const OwnerInfoWrapper = styled.div `
 display:flex;
 justify-content: center;
 margin: 5px;
 text-align: center;
-
 `
 const Container = styled.div `
 display: flex;
@@ -79,12 +71,15 @@ margin: 0px 30px;
 
 const TextAlign = styled.div `
 text-align:center;
-
 `
 
 const OwnerCard = styled.div`
 border: 1px solid;
 box-shadow: 2px 3px 3px 3px grey;
-
-
 `
+
+//keys to use later
+{/* <div><img width="100%" src={house.kitchen} alt=""/></div>
+<div><img width="100%" src={house.bathroom} alt=""/></div>
+<div><img width="100%" src={house.livingroom} alt=""/></div> */
+}
