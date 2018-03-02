@@ -75,7 +75,7 @@ export default class HouseList extends Component {
 
 
 const HouseContainer = styled.div`
-max-width: 20rem;
+max-width: 25.3rem;
 border: 1px solid black;
 
 `
