@@ -13,7 +13,6 @@ export default class NewYorkEventInfo extends Component {
           .map((event) => {
             return (
               <div>
-
                 <Table>
                   <Column>
                     <ColumnTitle>Name</ColumnTitle>
@@ -42,7 +41,6 @@ export default class NewYorkEventInfo extends Component {
                         return <Holder>{event.category.name}</Holder>
                       })}
                   </Column>
-
                   <Column>
                     <ColumnTitle>Link</ColumnTitle>
                     {this
