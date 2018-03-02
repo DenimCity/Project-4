@@ -47,10 +47,10 @@ axios.get('homecoming/meetups/la').then(response=>{
     
   }
   componentWillMount = () => {
-  this.atlantaApiCall()
-  this.newYorkApiCall()
-  this.miamiApiCall()
-  this.losAngelesApiCall()
+  // this.atlantaApiCall()
+  // this.newYorkApiCall()
+  // this.miamiApiCall()
+  // this.losAngelesApiCall()
   }
 
   render() {
