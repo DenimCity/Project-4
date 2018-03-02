@@ -7,9 +7,9 @@ export default class About extends Component {
       <div>
         <Title>About?</Title>
         <Wrapper>
-          <Word>Sometimes finding housing for internships is a hassle
+          <Word>Sometimes finding housing for internships is a hassle.
           </Word>
-          <Word>But we just made it easier, we created this app to find homes</Word>
+          <Word> Due to the lack of convience, this app was created </Word>
           <Word>so students can find housing for 2 - 9 months.</Word>
 
           <MediaContainer>
@@ -35,7 +35,6 @@ export default class About extends Component {
     )
   }
 }
-
 const Word = styled.p `
 font-size:3.5rem;
 text-align:center;
