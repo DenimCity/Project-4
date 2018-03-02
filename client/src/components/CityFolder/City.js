@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom'
 import styled from 'styled-components'
-import { Wrapper, Image} from '../../basicstyledcomponents/basicComponents'
+import { Wrapper, Image, Title3} from '../../basicstyledcomponents/basicComponents'
 
 
 class City extends Component {
@@ -23,8 +23,3 @@ class City extends Component {
 }
 export default City;
 
-const Title3 = styled.span`
-font-family: 'Shrikhand', cursive;
-font-size:5rem;
-color:#FF9009;
-`

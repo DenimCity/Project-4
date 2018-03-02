@@ -9,9 +9,7 @@ export default class HomePage extends Component {
         </Title>
         <Title>a piece of cake . . . </Title>
         <HomeBody>
-
           <img src="https://i.imgur.com/GhgBxx9.jpg" alt=""/>
-
         </HomeBody>
       </div>
     )
@@ -21,6 +19,8 @@ export default class HomePage extends Component {
 const HomeBody = styled.div `
 display:flex;
 flex-direction:column;
-max-height:1rem;
+img {
+  width:100%;
+}
 
 `
