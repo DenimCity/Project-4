@@ -4,7 +4,7 @@ export const Title = styled.h1`
 font-family:'Shadows Into Light', cursive;
 text-align:center;
 color:#C34C29;
-font-size:6rem;
+font-size:2rem;
 font-style:italic;
 `
 export const Title2 = styled.h2`
@@ -13,6 +13,14 @@ text-align:center;
 color:goldenrod;
 font-size:3rem;
 font-style:italic;
+`
+
+export const PageTitle = styled.h1`
+font-size: 2.5rem;
+text-decoration: underline;
+font-family:'Shadows Into Light', cursive;
+color:white;
+
 `
 
 export const Form = styled.form`
@@ -59,3 +67,8 @@ export const ColumnTitle = styled.div `
 export const Holder = styled.div `
     padding: 5px 0;
 `
+export const LinkWrapper = styled.div`
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+` 

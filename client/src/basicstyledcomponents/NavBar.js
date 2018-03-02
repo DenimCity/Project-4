@@ -1,17 +1,21 @@
 import React from 'react'
 import styled from 'styled-components'
+import {Title, LinkWrapper, PageTitle} from './basicComponents'
+// import {LinkWrapper} from './'
 const NavBar = () => {
   return (
     <Nav>
       <div>
-        <h1>HomeComing</h1>
+        <PageTitle>HomeComing</PageTitle>
+      </div>
+      <LinkWrapper>
       <a href="/">Home</a>
       <a href="/cities">Cities</a>
       <a href="/meetups">Events</a>
       <a href="/about">About</a>
       {/* <a href="/signin">Sign In</a> */}
       <a href="/hosting"><span>Become a Host?</span></a>
-      </div>
+      </LinkWrapper>
     </Nav>
   );
 };
@@ -27,6 +31,7 @@ min-height:200px;
 display:flex;
 justify-content:center;
 align-items:center; 
+flex-direction:column;
 a{ 
   
   clear:right;
@@ -34,7 +39,7 @@ a{
   color:gray;
   margin: 0 10px;
   line-height: 70px;
-  font-size:6rem;
+  font-size:2rem;
   font-family:'Passion One', cursive;
   &:hover{
     color:white;
@@ -48,5 +53,7 @@ a{
   }
 
 `
+
+
 
 
