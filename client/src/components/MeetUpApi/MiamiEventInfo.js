@@ -2,7 +2,6 @@ import React, {Component} from 'react'
 import styled from 'styled-components'
 import { TableWrapper, Table, Column, ColumnTitle, Holder} from '../../basicstyledcomponents/basicComponents'
 
-
 export default class MiamiEventInfo extends Component {
   render() {
     return (
@@ -43,7 +42,6 @@ export default class MiamiEventInfo extends Component {
                         return <Holder>{event.category.name}</Holder>
                       })}
                   </Column>
-
                   <Column>
                     <ColumnTitle>Link</ColumnTitle>
                     {this
