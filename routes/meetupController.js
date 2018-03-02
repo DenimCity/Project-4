@@ -21,7 +21,7 @@ router.get('/atlanta', async(request, response) => {
   console.log(typeof(process.env.EVENT_KEY))
 
   axios
-    .get(`https://api.meetup.com/find/groups?key=${process.env.EVENT_KEY}&photo-host=public&location=Atlanta%2CGa&page=20&sig_id=245595678&sig=6cf7a038a4f9a98787a82fcf8aae96915e2a55eb`)
+    .get(`https://api.meetup.com/find/groups?key=${process.env.EVENT_KEY}&photo-host=public&location=Atlanta%2CGa&page=3&sig_id=245595678&sig=6cf7a038a4f9a98787a82fcf8aae96915e2a55eb`)
     .then((response)=> {
       return response.data
     }).then((atlanta)=> {
@@ -49,7 +49,7 @@ router.get('/newyork', async(request, response) => {
   console.log('hit the meetup controller ')
 
   axios
-    .get(`https://api.meetup.com/find/groups?key=${process.env.EVENT_KEY}&photo-host=public&location=New+York&page=20&sig_id=245595678&sig=84e56927e5bce3de07c37ad434c0dd30a91ef1f1`)
+    .get(`https://api.meetup.com/find/groups?key=${process.env.EVENT_KEY}&photo-host=public&location=New+York&page=4&sig_id=245595678&sig=84e56927e5bce3de07c37ad434c0dd30a91ef1f1`)
     .then((response)=> {
       return response.data
     }).then((newyork)=> {
