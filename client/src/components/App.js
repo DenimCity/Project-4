@@ -4,10 +4,9 @@ import axios from 'axios'
 //importing components
 import Homepage from './HomePage'
 import AboutPage from './AboutPage'
-import CitiesList from './CitiesList'
-// import SingleCity from './SingleCity'
-import HouseList from './HouseList'
-import HouseForm from './HouseForm'
+import CitiesList from '../components/CityFolder/CitiesList'
+import HouseList from '../components/HouseFolder/HouseList'
+import HouseForm from '../components/HouseFolder/HouseForm'
 import MeetUpApiCall from './MeetUpApi/MeetUpApiCall'
 import SignIn from './SignIn'
 
