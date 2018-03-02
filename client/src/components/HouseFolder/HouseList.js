@@ -3,6 +3,7 @@ import House from './House'
 import HouseForm from './HouseForm'
 import styled from 'styled-components'
 import axios from 'axios'
+
 export default class HouseList extends Component {
 
   state = {
@@ -28,21 +29,7 @@ export default class HouseList extends Component {
     console.log('here from the create user route');
     // const response = await axios.post(`/${cityId}/houses/new`)
     const response = await axios.post(`/cityId/houses/new`, cityId)
-    //testing out destructing data
-    // const newHouse = {
-    //   name,
-    //   amenities,
-    //   description,
-    //   address,
-    //   zip,
-    //   price,
-    //   kitchen,
-    //   bathroom,
-    //   livingroom,
-    //   owner,
-    //   owner_photo,
-    //   owner
-    // } = response.data
+ 
     const newHouse = response.data
     const houses = [...this.state.houses]
     houses.push(newHouse)
@@ -64,8 +51,8 @@ export default class HouseList extends Component {
         return (<House key={index} house={house}/>)
       })
     return (
-      <HouseWrapper>
-        <HouseContainer>
+      <HouseWrapper className="houeWrapper" >
+        <HouseContainer className="HoueContainer">
           {housesList}
         </HouseContainer>
       </HouseWrapper>
@@ -75,15 +62,23 @@ export default class HouseList extends Component {
 
 
 const HouseContainer = styled.div`
-max-width: 25.3rem;
-border: 1px solid black;
+display:grid;
+grid-template-columns:auto auto;
+max-width: 63.2rem;
+    grid-gap: 2rem;
+    padding: 3rem 0rem;
+
+@media (max-width: 669px) {
+  grid-template-columns:auto;
+padding:0rem;
+  }
 
 `
 
 const HouseWrapper = styled.div`
-border:solid 1px red;
 display:flex;
 flex-wrap:wrap;
 justify-content: center;
+flex-direction:row;
 
 `
