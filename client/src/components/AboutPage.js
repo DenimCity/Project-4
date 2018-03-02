@@ -11,6 +11,7 @@ export default class About extends Component {
           </Word>
           <Word>  Due to the lack of convience, we decided to bridge the gap. </Word>
           <Word>Here students will be able to find housing close to their assigned sites.</Word>
+          <Word>And we know venturing to a new city may be stressful or a bit scary. To better accomodate the student, we have a few suggested meetups for each city.</Word>
 
           <MediaContainer>
             <div>
