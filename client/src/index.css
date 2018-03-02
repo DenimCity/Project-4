@@ -3,6 +3,7 @@ body {
   width:100vw;
   font-family: sans-serif;
   margin:0;
+  background-color:rgba(238, 238, 238, 0.5);
 }
 
 svg.svg-inline--fa.fa-twitter.fa-w-16 {

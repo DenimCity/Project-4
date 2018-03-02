@@ -14,6 +14,11 @@ color:goldenrod;
 font-size:3rem;
 font-style:italic;
 `
+export const Title3 = styled.span`
+font-family: 'Shrikhand', cursive;
+font-size:4rem;
+color:black;
+`
 
 export const PageTitle = styled.h1`
 font-size: 2.5rem;
@@ -35,7 +40,8 @@ align-items:center;
 `
 
 export const Image = styled.img`
-border-radius:24px;
+border-radius:6px;
+width:100%;
 
 `
 
