@@ -47,22 +47,35 @@ router.get('/:cityId/houses', (request, response) => {
 })
 
 //post a new house route in that city
-router.post('/:cityId/houses/new', async(request, response) => {
-  console.log('hit the new house route')
-  try {
-    const newHouse = new House(request.body)
-    // console.log('here is the new house ', newHouse)
+// router.post('/:cityId/houses/new', async(request, response) => {
+//   console.log('hit the new house route')
+//   try {
+//     const newHouse = new House(request.body)
+//     // console.log('here is the new house ', newHouse)
 
-    const city = await City.findById(request.params.cityId)
-    // console.log('we found the city ', city)
-    city
-      .houses
-      .push(newHouse)
-    const saved = await city.save()
-    response.json(saved)
-  } catch (error) {
-    // console.log(error)
-  }
+//     const city = await City.findById(request.params.cityId)
+//     // console.log('we found the city ', city)
+//     city
+//       .houses
+//       .push(newHouse)
+//     const saved = await city.save()
+//     response.json(saved)
+//   } catch (error) {
+//     // console.log(error)
+//   }
+// })
+
+router.post('/:cityId/houses/new', (request, response) => {
+  console.log('hit the new house route')
+  City.findById(req.params.cityId)
+      .then((city) => 
+      {
+          city.subjects.id(req.params.houseId).resources.push(request.body)
+          // city.save()
+          response.json(city)
+      })
+      .then(() => res.sendStatus(200))
+      .catch((error) => { console.log(error) })
 })
 
 //grab that one individual house by Id
