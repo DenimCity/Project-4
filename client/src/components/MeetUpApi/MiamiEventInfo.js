@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import styled from 'styled-components'
-import { TableWrapper, Table, Column, ColumnTitle, Holder} from '../../basicstyledcomponents/basicComponents'
+import { TableWrapper, Table, Column, ColumnTitle, Holder, LinkTag } from '../../basicstyledcomponents/basicComponents'
 
 export default class MiamiEventInfo extends Component {
   render() {
@@ -49,8 +49,8 @@ export default class MiamiEventInfo extends Component {
                       .miamiEvents
                       .map(event => {
                         return <Holder>
-                          <a href={event.link} target="blank">
-                            Click Here</a>
+                          <LinkTag href={event.link} target="blank">
+                            Click Here</LinkTag>
                         </Holder>
                       })}
                   </Column>
@@ -63,3 +63,4 @@ export default class MiamiEventInfo extends Component {
     )
   }
 }
+
