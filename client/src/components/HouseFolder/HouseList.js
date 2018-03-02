@@ -25,16 +25,7 @@ export default class HouseList extends Component {
       })
   }
 
-   createAHouse = async(cityId) => {
-    console.log('here from the create user route');
-    // const response = await axios.post(`/${cityId}/houses/new`)
-    const response = await axios.post(`/cityId/houses/new`, cityId)
- 
-    const newHouse = response.data
-    const houses = [...this.state.houses]
-    houses.push(newHouse)
-    this.setState({houses})
-  }
+  
 // working on delete route
   //
   // deleteAHouse = async(houseId) => {
@@ -43,7 +34,6 @@ export default class HouseList extends Component {
   // }
 
   render() {
-    const makeNewHouse = () => (<HouseForm createHouse={this.createAHouse}/>)
     const housesList = this
       .state
       .houses
