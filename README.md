@@ -18,7 +18,7 @@ This is an app developed to make finding internship housing more convient. As we
 ---
 [GitHub](https://github.com/DenimCity/Project4-HomeComing)
 
-[App](https://cryptic-savannah-76832.herokuapp.com/)
+[App](https://fast-meadow-96678.herokuapp.com/)
 
 --
 Technologies
