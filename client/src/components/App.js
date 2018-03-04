@@ -18,30 +18,21 @@ class App extends Component {
     cities: []
   }
   userFromServer = () => {
-    // console.log('here from the user data route');
     axios
       .get('/homecoming/user/profile')
       .then(response => {
         const users = response.data
-        // console.log('the user data on the sever side', users)
         this.setState({users})
       })
   }
   citiesFromServer = () => {
-    // console.log(`here from the city server api call in react`)
     axios
       .get(`/homecoming/city/`)
       .then(response => {
         const cities = response.data
-        // console.log(`all cities data ${cities}`)
         this.setState({cities})
       })
   }
-
- 
-
-  
-
   componentWillMount = () => {
     this.userFromServer()
     this.citiesFromServer()
@@ -63,7 +54,6 @@ class App extends Component {
             <Route exact path="/meetups" component={MeetUpApiCall}/>
             <Route exact path="/hosting" component={HouseForm}/>
             <Route exact path="/signin" component={SignIn}/>
-
           </Switch>
         </Router>
       </div>

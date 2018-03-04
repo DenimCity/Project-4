@@ -14,8 +14,6 @@ export default class About extends Component {
           Here students will be able to find housing close to their assigned sites. 
           And we know venturing to a new city may be stressful or a bit scary. To better accomodate the student, we have a few suggested meetups for each city.
           </Word>
-         
-
           <MediaContainer>
             <div>
               <GoLink href="https://twitter.com/JW_Altidor" target="_blank">
@@ -31,10 +29,8 @@ export default class About extends Component {
                 </Word>
               </GoLink>
             </div>
-
           </MediaContainer>
         </Wrapper>
-
       </div>
     )
   }

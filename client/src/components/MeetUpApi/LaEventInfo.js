@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import styled from 'styled-components'
-import { TableWrapper, Table, Column, ColumnTitle, Holder, LinkTag} from '../../basicstyledcomponents/basicComponents'
+import { Table, Column, ColumnTitle, Holder, LinkTag} from '../../basicstyledcomponents/basicComponents'
 
 export default class LaEventInfo extends Component {
   render() {
