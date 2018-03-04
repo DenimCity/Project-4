@@ -12,7 +12,7 @@ export default class About extends Component {
           <br/>
           <br/>
           Here students will be able to find housing close to their assigned sites. 
-          And we know venturing to a new city may be stressful or a bit scary. To better accomodate the student, we have a few suggested meetups for each city.
+          And we know venturing to a new city may be stressful. So to better accomodate the student, we have a few suggested meetup events for each city.
           </Word>
           <MediaContainer>
             <div>
@@ -36,8 +36,9 @@ export default class About extends Component {
   }
 }
 const Word = styled.p `
-    font-size: 2rem;
-    max-width: 37rem;
+font-size: 2rem;
+max-width: 37rem;
+font-family: monospace;
 `
 
 const GoLink = styled.a `
