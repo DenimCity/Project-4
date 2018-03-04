@@ -8,10 +8,13 @@ export default class About extends Component {
         <Title>About?</Title>
         <Wrapper>
           <Word>Sometimes finding housing for internships is a hassle.
+          Due to the lack of convience, we decided to bridge the gap.
+          <br/>
+          <br/>
+          Here students will be able to find housing close to their assigned sites. 
+          And we know venturing to a new city may be stressful or a bit scary. To better accomodate the student, we have a few suggested meetups for each city.
           </Word>
-          <Word>  Due to the lack of convience, we decided to bridge the gap. </Word>
-          <Word>Here students will be able to find housing close to their assigned sites.</Word>
-          <Word>And we know venturing to a new city may be stressful or a bit scary. To better accomodate the student, we have a few suggested meetups for each city.</Word>
+         
 
           <MediaContainer>
             <div>
@@ -37,9 +40,8 @@ export default class About extends Component {
   }
 }
 const Word = styled.p `
-font-size: 15px;
-text-align:center;
-
+    font-size: 2rem;
+    max-width: 37rem;
 `
 
 const GoLink = styled.a `
