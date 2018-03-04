@@ -6,10 +6,6 @@ const app = express();
 
 
 
-app.use(express.static(__dirname + '/client/build/'));
-app.get('*', (req,res) => {
-  res.sendFile(__dirname + '/client/build/index.html')
-})
 
 
 mongoose.Promise = global.Promise;
@@ -41,6 +37,10 @@ app.use('/homecoming/events', event)
 const meetUp = require('./routes/meetupController')
 app.use('/homecoming/meetups', meetUp)
 
+app.use(express.static(__dirname + '/client/build/'));
+app.get('*', (req,res) => {
+  res.sendFile(__dirname + '/client/build/index.html')
+})
 
 
 const PORT = process.env.PORT || 4000;
