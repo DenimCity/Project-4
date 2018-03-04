@@ -3,7 +3,6 @@ const Event = require('../db/models/Event')
 const router = express.Router({mergeParams: true})
 
 router.get('/', async (request, response)=>{
-console.log(`we hit the view app events routes`)
 try {
   const events = await Event.find({})
   response.json(events)
@@ -15,9 +14,7 @@ try {
 
 //post a new event 
 router.post('/create', async(request, response) => {
-  console.log(`hit the create event route`);
   try {
-      console.log('The data we are creating looks like => ', request.body)
       const newEvent = await Event.create(request.body)
       response.json(newEvent)
   } catch (error) {
@@ -36,7 +33,6 @@ router.delete('/:eventsId/delete', async (response, request)=> {
     console.log('could not delete',error )  
   }
 })
-
 
 router.patch('/eventId', async (response, request)=>{
 

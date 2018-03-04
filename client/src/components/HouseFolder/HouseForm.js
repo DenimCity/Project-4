@@ -46,19 +46,3 @@ justify-content:center;
 align-items:center;
 
 `
-// const Container = styled.div `
-{/* <Container>
-  <Title>Wanting to Post Your House?</Title>
-  <Title2>Here is where you submit that info..</Title2>
-
-  {/* <Form action="" method="get">
-    <label htmlFor="">YEs</label>
-    <div>
-      <input type="text" placeholder="trust"/></div>
-
-  </Form> */
-}
-{/* </Container> */
-}
-// display:flex; flex-direction:column; justify-content: center;
-// align-items:center; `

@@ -15,12 +15,10 @@ export default class HouseList extends Component {
   }
 
   housesFromServer = (cityId) => {
-    console.log('from the houses route')
     axios
       .get(`/homecoming/city/${cityId}/houses`)
       .then(response => {
         const houses = response.data
-        console.log(`the houses data ${houses}`)
         this.setState({houses})
       })
   }

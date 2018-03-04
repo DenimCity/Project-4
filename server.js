@@ -4,10 +4,7 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const app = express();
 
-app.use(express.static(__dirname + '/client/build/'));
-app.get('/', (req,res) => {
-  res.sendFile(__dirname + '/client/build/index.html')
-})
+
 
 
 
@@ -29,21 +26,21 @@ app.use(bodyParser.json());
 
 const user = require('./routes/userController')
 app.use('/homecoming/user', user)
-// console.log('phase 1 route in server file ', user)
 
 const city = require('./routes/cityController')
 app.use('/homecoming/city', city)
-// console.log('phase 2 route server file', city)
 
 const event = require('./routes/eventController')
 app.use('/homecoming/events', event)
-// console.log(`you have hit the events api route `)
 
 
 const meetUp = require('./routes/meetupController')
 app.use('/homecoming/meetups', meetUp)
-// console.log('you hit the meetup route')
 
+app.use(express.static(__dirname + '/client/build/'));
+app.get('*', (req,res) => {
+  res.sendFile(__dirname + '/client/build/index.html')
+})
 
 
 const PORT = process.env.PORT || 4000;

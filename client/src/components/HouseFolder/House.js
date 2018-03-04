@@ -22,7 +22,7 @@ export default class House extends Component {
       <OwnerCard className="OwnerCard">
         <TextAlign>
           <div>
-            <img width="100%" src={house.house_photo} alt=""/>
+            <img width="100%" src={house.house_photo} alt="house"/>
           </div>
          <div> <strong>Description</strong></div>
           <div>{house.description}</div>
@@ -32,7 +32,7 @@ export default class House extends Component {
           <div>{house.address}</div>
           <div>{house.price}/month</div>
         </TextAlign>
-        <img width="100%" height="400px" src={house.owner_photo}/>
+        <img width="100%" height="400px" src={house.owner_photo} alt="picture of owner"/>
         <OwnerInfoWrapper className="ownerInfoWrapper">
           <Container className="container">
             <div>
