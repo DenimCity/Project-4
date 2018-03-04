@@ -41,15 +41,16 @@ max-width: 37rem;
 font-family: monospace;
 `
 
-const GoLink = styled.a `
-text-decoration:none;
-color:orange;
-&:hover{
-  color:red;
-}
+// const GoLink = styled.a `
+// text-decoration:none;
+// color:orange;
+// &:hover{
+//   color:red;
+// }
 
-`
-const MediaContainer = styled.div`
-display:flex;
 
-`
+// `
+// const MediaContainer = styled.div`
+// display:flex;
+
+// `

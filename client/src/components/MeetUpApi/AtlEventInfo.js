@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import { TableWrapper, Table, Column, ColumnTitle, Holder, LinkTag} from '../../basicstyledcomponents/basicComponents'
+import {Table, Column, ColumnTitle, Holder, LinkTag} from '../../basicstyledcomponents/basicComponents'
 
 export default class AtlEventInfo extends Component {
   render() {

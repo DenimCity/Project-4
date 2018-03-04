@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import {Title, LinkWrapper, PageTitle} from './basicComponents'
+import { LinkWrapper, PageTitle} from './basicComponents'
 // import {LinkWrapper} from './'
 const NavBar = () => {
   return (
