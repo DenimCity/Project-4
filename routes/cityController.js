@@ -75,24 +75,31 @@ router.get('/:cityId/houses/:houseId', async(request, response) => {
     const city = await City.findById(cityId)
     response.json(city.houses.id(houseId))
   } catch (error) {
-    // console.log(`//grab that one individual house by Id route error${error}`);
+    console.log(`//grab that one individual house by Id route error${error}`);
   }
 
 })
 
-//delete a house in that one specific route city
-router.delete('/:cityId/houses/:houseId/delete', async (request, response) => {
-  console.log(`we hit the delete route`)
-  try {
-    await House.findByIdAndRemove(request.params.houseId)
-    response.sendStatus('something good happen')
-    response.json(city.houses.id(houseId))
-    // const houseToDelete = await House.findByIdAndRemove(request.params.houseId)
-    console.log('we found the house to delete the house it should be=>',houseToDelete)
-  } catch (error) {
-    console.log('delete a house error', error);
-    response.sendStatus('400 error')
+
+router.get('/:cityId/houses/:houseId/delete', async (request, response) => {
+  console.log("Deleting:", request.params)
+   try {
+     const cityId = request.params.cityId
+     console.log(cityId)
+     const houseId = request.params.houseId
+     console.log(houseId)
+     const city = await City.findById(cityId)
+      // console.log(city)
+      house = city.houses.id(houseId)
+      house.remove()
+      response.json(city)
+
+      
+  }
+  catch (err) {
+      console.log(err)
   }
 })
+
 
 module.exports = router
