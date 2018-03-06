@@ -5,8 +5,8 @@ export default class HomePage extends Component {
   render() {
     return (
       <div>
-        <Title>Make finding your internship housing
-        </Title>
+        <Title>Make finding your housing for internships
+         </Title>
         <Title>a piece of cake . . . </Title>
         <HomeBody>
           <img src="https://i.imgur.com/GhgBxx9.jpg" alt=""/>

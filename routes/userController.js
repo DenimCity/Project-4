@@ -14,14 +14,14 @@ router.get('/profile', async(request, response) => {
 
 router.get('/signup', (request, response) => {
   try {
-    console.log('hit the signUP route')
     res.json('hey post man can you me?')
-  } catch (error) {}
+  } catch (error) {
+    console.log(error)
+  }
 
 })
 router.get('/signin', (request, response) => {
   try {
-    console.log('hit the signIn route')
     res.json('hey post man can you me?')
   } catch (error) {
 
@@ -30,9 +30,9 @@ router.get('/signin', (request, response) => {
 })
 router.get('/secret', (request, response) => {
   try {
-    console.log('hit the secret route')
     response.json('hey post man can you me?')
   } catch (error) {
+    console.log(errror)
 
   }
 

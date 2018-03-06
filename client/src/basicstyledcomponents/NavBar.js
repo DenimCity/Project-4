@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import {Title, LinkWrapper, PageTitle} from './basicComponents'
+import { LinkWrapper, PageTitle} from './basicComponents'
 // import {LinkWrapper} from './'
 const NavBar = () => {
   return (
@@ -10,9 +10,9 @@ const NavBar = () => {
       </div>
       <LinkWrapper>
       <a href="/">Home</a>
+      <a href="/about">About</a>
       <a href="/cities">Cities</a>
       <a href="/meetups">Events</a>
-      <a href="/about">About</a>
       {/* <a href="/signin">Sign In</a> */}
       <a href="/hosting"><span>Become a Host?</span></a>
       </LinkWrapper>

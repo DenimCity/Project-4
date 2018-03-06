@@ -1,12 +1,9 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom'
-import styled from 'styled-components'
 import { Wrapper, Image, Title3} from '../../basicstyledcomponents/basicComponents'
-
 
 class City extends Component {
   render() {
-
     return (
       <div>
         <Wrapper>
