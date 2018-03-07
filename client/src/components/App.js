@@ -8,6 +8,7 @@ import CitiesList from '../components/CityFolder/CitiesList'
 import HouseList from '../components/HouseFolder/HouseList'
 import HouseForm from '../components/HouseFolder/HouseForm'
 import MeetUpApiCall from './MeetUpApi/MeetUpApiCall'
+import HomePending from '../components/HouseFolder/HomePending'
 import SignIn from './SignIn'
 
 //import styled components
@@ -54,6 +55,7 @@ class App extends Component {
             <Route exact path="/meetups" component={MeetUpApiCall}/>
             <Route exact path="/hosting" component={HouseForm}/>
             <Route exact path="/signin" component={SignIn}/>
+            <Route exact path="/housepending" component={HomePending}/>
           </Switch>
         </Router>
       </div>

@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import {Redirect} from 'react-router-dom'
+import styled from 'styled-components'
 import axios from 'axios'
 export default class HouseForm extends Component {
 
@@ -15,7 +16,6 @@ export default class HouseForm extends Component {
       "owner_phone":'',
   },
     houses:[],
-    value:'',
 
     redirect: false
   }
@@ -73,7 +73,7 @@ export default class HouseForm extends Component {
   handleSubmit = (event) => {
     this.createAHouse()
     event.preventDefault()
-    this.setState({newHouse: this.state.newHouse})
+    this.setState({newHouse: this.state.newHouse, redirect: true })
   }
   
 
@@ -89,38 +89,41 @@ export default class HouseForm extends Component {
     }
 
     if (this.state.redirect) {
-      return <Redirect to="/"/>
+      return <Redirect to="/housepending"/>
     }
     return (
-      <div>
+      <Container>
+        <h1>New House Form </h1>
+      <FormContainer>
         <form onSubmit={this.handleSubmit}>
           <div>
-            <input
+            <Input
               onChange={this.handleChange}
               name="house_photo"
               placeholder="House Photo"
               
               required
-              value={this.state.house_photo}/>
+              value={this.state.house_photo}
+              />
           </div>
           <div>
-            <input
+            <Input
               onChange={this.handleChange}
               name="amenities"
-              placeholder="amenities"
+              placeholder="Enter your amenities"
              
               required
               value={this.state.amenities}/>
           </div>
           <div>
-            <input
+            <Input
               onChange={this.handleChange}
               name="description"
               placeholder="Enter description"
               value={this.state.description}/>
           </div>
           <div>
-            <input
+            <Input
               onChange={this.handleChange}
               name="address"
               placeholder="Enter address"
@@ -128,14 +131,14 @@ export default class HouseForm extends Component {
               value={this.state.newHouse.address}/>
           </div>
           <div>
-            <input
+            <Input
               onChange={this.handleChange}
               name="price"
-              placeholder="Monthly price"
+              placeholder="Enter Monthly price"
               value={this.state.newHouse.price}/>
           </div>
           <div>
-            <input
+            <Input
               onChange={this.handleChange}
               name="owner_photo"
               placeholder="Enter your photo.."
@@ -143,7 +146,7 @@ export default class HouseForm extends Component {
               value={this.state.newHouse.owner_photo}/>
           </div>
           <div>
-            <input
+            <Input
               onChange={this.handleChange}
               name="owner_phone"
               placeholder="Enter your phone number.."
@@ -159,8 +162,40 @@ export default class HouseForm extends Component {
             <button>Cancel</button>
           </a>
         </form>
-      </div>
+      </FormContainer>
+      </Container>
     )
   }
 }
 
+const Input = styled.input`
+cursor: pointer;
+width: 45vw;
+padding: 3vh;
+text-align: center;
+border-radius: 5px;
+box-shadow: 3px 2px 1px 0px;
+margin-bottom: 1vh;
+font-size: 2vw;
+&:hover{
+font-size: 15px;
+}
+
+`
+const FormContainer = styled.div`
+display:flex;
+align-items:center;
+
+
+`
+const Form = styled.form`
+
+
+`
+
+const Container = styled.div`
+display:flex;
+justify-content:center;
+flex-direction:column;
+align-items:center
+`
