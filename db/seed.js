@@ -159,7 +159,7 @@ Miami
   .houses
   .push(house4, house5, house6)
 
-const LA = new City({name: "Los Angelous", state: "California", country: "US", photo: "http://www.mbdalosangeles.org/uploads/1/0/6/0/10602258/hdr-losangeles1_orig.jpg"})
+const LA = new City({name: "Los Angeles", state: "California", country: "US", photo: "http://www.mbdalosangeles.org/uploads/1/0/6/0/10602258/hdr-losangeles1_orig.jpg"})
 const house7 = new House({
   city_name: "Los Angeles",
   house_photo: "https://a0.muscache.com/im/pictures/a85d04ad-adac-4ed2-951b-b40730d8ea9e.jpg?aki_policy=xx_large",
