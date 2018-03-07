@@ -4,6 +4,7 @@ const router = express.Router()
 
 
 router.get('/profile', async(request, response) => {
+  
   try {
     const users = await User.find()
     response.json(users)
