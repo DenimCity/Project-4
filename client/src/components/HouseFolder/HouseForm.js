@@ -4,44 +4,58 @@ import axios from 'axios'
 export default class HouseForm extends Component {
 
   state = {
-    newHouse: {},
+    cities:[],
+    newHouse:{
+      "house_photo":'',
+      "amenities":'',
+      "description":'',
+      "address":'',
+      "price":'',
+      "owner_photo":'',
+      "owner_phone":'',
+  },
     houses:[],
+    value:'',
 
     redirect: false
+  }
+
+  citiesFromServer = () => {
+    axios
+      .get(`/homecoming/city/`)
+      .then(response => {
+        const cities = response.data
+        console.log('the cities are',cities);
+        this.setState({cities})
+      })
+  }
+
+  componentWillMount = () => {
+    this.citiesFromServer()
   }
 
   handleChange = (event) => {
     const attribute = event.target.name
     let val = event.target.value
     const newHouse = {
-      ...this.state.houses
+      ...this.state.newHouse
     }
     newHouse[attribute] = val
+    console.log('handle change',newHouse)
     this.setState({newHouse})
   }
-  handleSubmit = (event) => {
-    event.preventDefault()
-    this
-      .state
-      .createHouse(this.state.newHouse)
-    this.setState({redirect: true})
-  }
-  createAHouse = (house_photo, amenities, description, address, price, owner_photo, owner_phone) => {
-    console.log('here from the create user route');
+ 
 
-    axios
-      .post(`/homecoming/city/${this.props.cityId}/houses/new`, {
-      house_photo,
-      amenities,
-      description,
-      address,
-      price,
-      owner_photo,
-      owner_phone
-    })
+  createAHouse = () => {
+    console.log('create house',);
+    const cityId = this.getCityId(this.state.newHouse.cities)
+
+    axios.post(`/homecoming/city/${cityId}/houses/new`, this.state.newHouse)
       .then(response => {
         const newHouse = response.data
+        console.log('the new house data', newHouse);
         const houses = [...this.state.houses]
+      console.log('the current houses are',this.state)
         houses.push(newHouse)
         this.setState({houses})
       })
@@ -50,7 +64,29 @@ export default class HouseForm extends Component {
       })
   }
 
+  getCityId = (cityName) => {
+    const city = this.state.cities.find(city =>  city.name === cityName)
+     return city._id
+
+    }
+  
+  handleSubmit = (event) => {
+    this.createAHouse()
+    event.preventDefault()
+    this.setState({newHouse: this.state.newHouse})
+  }
+  
+
   render() {
+    const cityList = ()=>{
+      if(this.state.cities){
+        return this.state.cities.map((city)=> {
+          return(
+            <option key={city._id} value={city.name}>{city.name}</option> 
+          )
+        })
+      }
+    }
 
     if (this.state.redirect) {
       return <Redirect to="/"/>
@@ -63,26 +99,25 @@ export default class HouseForm extends Component {
               onChange={this.handleChange}
               name="house_photo"
               placeholder="House Photo"
-              type="text"
+              
               required
-              value={this.state.newHouse.house_photo}/>
+              value={this.state.house_photo}/>
           </div>
           <div>
             <input
               onChange={this.handleChange}
               name="amenities"
               placeholder="amenities"
-              type="text"
+             
               required
-              value={this.state.newHouse.amenities}/>
+              value={this.state.amenities}/>
           </div>
           <div>
             <input
               onChange={this.handleChange}
               name="description"
               placeholder="Enter description"
-              type="text"
-              value={this.state.newHouse.description}/>
+              value={this.state.description}/>
           </div>
           <div>
             <input
@@ -90,7 +125,6 @@ export default class HouseForm extends Component {
               name="address"
               placeholder="Enter address"
               default="367 Kuhic River"
-              type="text"
               value={this.state.newHouse.address}/>
           </div>
           <div>
@@ -98,7 +132,6 @@ export default class HouseForm extends Component {
               onChange={this.handleChange}
               name="price"
               placeholder="Monthly price"
-              type="text"
               value={this.state.newHouse.price}/>
           </div>
           <div>
@@ -106,7 +139,6 @@ export default class HouseForm extends Component {
               onChange={this.handleChange}
               name="owner_photo"
               placeholder="Enter your photo.."
-              type="text"
               default="https://i.imgur.com/G80lKgk.jpg"
               value={this.state.newHouse.owner_photo}/>
           </div>
@@ -114,19 +146,12 @@ export default class HouseForm extends Component {
             <input
               onChange={this.handleChange}
               name="owner_phone"
-              placeholder="Enter your photo.."
-              type="text"
+              placeholder="Enter your phone number.."
+             
               default="999-999-999"
               value={this.state.newHouse.owner_phone}/>
           </div>
-
-          <select name="houses">
-            <option value="volvo">Atlanta</option>
-            <option value="saab">Los Angeles</option>
-            <option value="mercedes">New York</option>
-            <option value="audi">Miami</option>
-          </select>
-
+          <select onChange={this.handleChange} name="cities">{cityList()}</select>
           <button type="submit">
             Submit
           </button>
@@ -139,7 +164,3 @@ export default class HouseForm extends Component {
   }
 }
 
-// // const response = await axios.post(`/${cityId}/houses/new`) const response =
-// // await axios.post(`/cityId/houses/new`, cityId) const newHouse = response.data
-// // const houses = [...this.state.houses] houses.push(newHouse)
-// // this.setState({houses})
