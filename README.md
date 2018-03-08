@@ -10,8 +10,8 @@ This is an app developed to make finding internship housing more convient. As we
 
 ----
 
-![](https://i.imgur.com/0aF1DoYs.png)
-![](https://i.imgur.com/9rjx7bjs.png)
+![](https://i.imgur.com/0aF1DoYm.pngg)
+![](https://i.imgur.com/d66YB8dm.png)
 
 ---
 ---
