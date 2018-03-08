@@ -15,9 +15,9 @@ This is an app developed to make finding internship housing more convient. As we
 
 ---
 ---
-[GitHub](https://github.com/DenimCity/Project4-HomeComing)
+[Code Snippets](https://github.com/DenimCity/Project4-HomeComing)
 
-[App](https://fast-meadow-96678.herokuapp.com/)
+[View App](https://fast-meadow-96678.herokuapp.com/)
 
 --
 Technologies
