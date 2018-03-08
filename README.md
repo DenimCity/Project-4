@@ -10,10 +10,9 @@ This is an app developed to make finding internship housing more convient. As we
 
 ----
 
-![](https://i.imgur.com/0aF1DoY.png)
-![](https://i.imgur.com/d66YB8d.png)
-![](https://i.imgur.com/9rjx7bj.png)
-![](https://i.imgur.com/81tmOxR.png)
+![](https://i.imgur.com/0aF1DoYs.png)
+![](https://i.imgur.com/9rjx7bjs.png)
+
 ---
 ---
 [GitHub](https://github.com/DenimCity/Project4-HomeComing)
