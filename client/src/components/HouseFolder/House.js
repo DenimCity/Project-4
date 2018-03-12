@@ -24,7 +24,9 @@ export default class House extends Component {
           <div>
             <img width="100%" src={house.house_photo} alt="house"/>
           </div>
-         <div> <strong>Description</strong></div>
+          <div>
+            <strong>Description</strong>
+          </div>
           <div>{house.description}</div>
           <strong>Amenities</strong>
           <div>{house.amenities}</div>
@@ -32,7 +34,9 @@ export default class House extends Component {
           <div>{house.address}</div>
           <div>{house.price}/month</div>
         </TextAlign>
-        <img width="100%" height="400px" src={house.owner_photo} alt="owner"/>
+        {/* <button onClick={()=>this.toggleOwner("ownerShowing")}></button>
+          {!this.state.ownerShowing ? <div> </div> : <div> banana</div> } */}
+        <img  src={house.owner_photo} alt="owner"/>
         <OwnerInfoWrapper className="ownerInfoWrapper">
           <Container className="container">
             <div>
@@ -73,7 +77,7 @@ const TextAlign = styled.div `
 text-align:center;
 `
 
-const OwnerCard = styled.div`
+const OwnerCard = styled.div `
 border: 1px solid;
 box-shadow: 2px 3px 3px 3px grey;
 `
