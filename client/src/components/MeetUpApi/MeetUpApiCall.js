@@ -12,48 +12,62 @@ export default class MeetUpApiCalls extends Component {
     atlEvents: [],
     newYorkEvents: [],
     miamiEvents: [],
-    laEvents: []
+    laEvents: [],
+    isLoaded: false
   }
 
-  atlantaApiCall= () => {
-    axios.get('homecoming/meetups/atlanta').then(response=>{
-      const atlEvents = response.data
-      // console.log('data fora atlanta ', atlEvents )
-      this.setState({atlEvents})
-    })
-    
+  atlantaApiCall = () => {
+    axios
+      .get('homecoming/meetups/atlanta')
+      .then(response => {
+        const atlEvents = response.data
+        // console.log('data fora atlanta ', atlEvents )
+        this.setState({atlEvents, isLoaded:true})
+      })
+
   }
-  newYorkApiCall= () => {
-axios.get('/homecoming/meetups/newyork').then(response=> {
-  const newYorkEvents = response.data
-  this.setState({newYorkEvents})
-})
-    
+  newYorkApiCall = () => {
+    axios
+      .get('/homecoming/meetups/newyork')
+      .then(response => {
+        const newYorkEvents = response.data
+        this.setState({newYorkEvents})
+      })
+
   }
-  miamiApiCall= () => {
-axios.get('/homecoming/meetups/miami').then(response=>{
-  const miamiEvents = response.data
-  // console.log('data fora miami ', miamiEvents )
-  this.setState({miamiEvents})
-})
-    
+  miamiApiCall = () => {
+    axios
+      .get('/homecoming/meetups/miami')
+      .then(response => {
+        const miamiEvents = response.data
+        // console.log('data fora miami ', miamiEvents )
+        this.setState({miamiEvents})
+      })
+
   }
-  losAngelesApiCall= () => {
-axios.get('homecoming/meetups/la').then(response=>{
-  const laEvents = response.data
-  // console.log('data fora los angeles ', laEvents )
-  this.setState({laEvents})
-})
-    
+  losAngelesApiCall = () => {
+    axios
+      .get('homecoming/meetups/la')
+      .then(response => {
+        const laEvents = response.data
+        // console.log('data fora los angeles ', laEvents )
+        this.setState({laEvents})
+      })
+
   }
   componentWillMount = () => {
-  this.atlantaApiCall()
-  this.newYorkApiCall()
-  this.miamiApiCall()
-  this.losAngelesApiCall()
+    
+      this.atlantaApiCall()
+      this.newYorkApiCall()
+      this.miamiApiCall()
+      this.losAngelesApiCall()
+    
   }
 
   render() {
+    // const {isLoaded} = this.props
+    // if (!isLoaded) 
+    //   return <h1>Loading ...</h1>
     return (
       <div>
         <Title>ATL Events</Title>
