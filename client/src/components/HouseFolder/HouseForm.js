@@ -69,14 +69,11 @@ export default class HouseForm extends Component {
      return city._id
 
     }
-    handleCancel = (event)=>{
-      <Redirect to="/"/>
-    }
   
   handleSubmit = (event) => {
-    this.createAHouse()
+  this.createAHouse()
     event.preventDefault()
-    this.setState({newHouse: this.state.newHouse, redirect: true })
+    this.setState({redirect: true })
   }
   
 
@@ -123,6 +120,7 @@ export default class HouseForm extends Component {
               onChange={this.handleChange}
               name="description"
               placeholder="Enter description"
+              required
               value={this.state.description}/>
           </div>
           <div>
@@ -131,6 +129,7 @@ export default class HouseForm extends Component {
               name="address"
               placeholder="Enter address"
               default="367 Kuhic River"
+              required
               value={this.state.newHouse.address}/>
           </div>
           <div>
@@ -138,6 +137,7 @@ export default class HouseForm extends Component {
               onChange={this.handleChange}
               name="price"
               placeholder="Enter Monthly price"
+              required
               value={this.state.newHouse.price}/>
           </div>
           <div>
@@ -155,6 +155,7 @@ export default class HouseForm extends Component {
               placeholder="Enter your phone number.."
              
               default="999-999-999"
+              required
               value={this.state.newHouse.owner_phone}/>
           </div>
           <ButtonContainer>
