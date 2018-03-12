@@ -69,6 +69,9 @@ export default class HouseForm extends Component {
      return city._id
 
     }
+    handleCancel = (event)=>{
+      <Redirect to="/"/>
+    }
   
   handleSubmit = (event) => {
     this.createAHouse()
@@ -154,15 +157,19 @@ export default class HouseForm extends Component {
               default="999-999-999"
               value={this.state.newHouse.owner_phone}/>
           </div>
+          <ButtonContainer>
+
           <select onChange={this.handleChange} name="cities">{cityList()}</select>
           <button type="submit">
             Submit
           </button>
+          </ButtonContainer>
+        </form>
+      </FormContainer>
+      <br/>
           <a href="/">
             <button>Cancel</button>
           </a>
-        </form>
-      </FormContainer>
       </Container>
     )
   }
@@ -188,8 +195,9 @@ align-items:center;
 
 
 `
-const Form = styled.form`
-
+const ButtonContainer = styled.div`
+display:flex;
+justify-content:center;
 
 `
 
