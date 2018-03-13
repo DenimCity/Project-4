@@ -50,7 +50,7 @@ const house1 = new House({
   livingroom: "https://a0.muscache.com/im/pictures/b5f6d818-4033-4e80-a19a-93be5eb8f0db.jpg?aki" +
       "_policy=x_large",
   owner: "Tony",
-  owner_photo: "https://i.imgur.com/VopCByG.jpg",
+  owner_photo: "https://i.imgur.com/FYdgUhz.jpg",
   owner_phone: "359.764.7139"
 })
 
@@ -174,7 +174,7 @@ const house7 = new House({
   bathroom: "nice",
   livingroom: "cool",
   owner: "Jean",
-  owner_photo: "https://i.imgur.com/4hfZoUF.jpg",
+  owner_photo: "https://i.imgur.com/srlfBko.jpg",
   owner_phone: "359.764.7139"
 })
 
