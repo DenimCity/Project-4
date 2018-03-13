@@ -22,7 +22,7 @@ export default class MeetUpApiCalls extends Component {
       .then(response => {
         const atlEvents = response.data
         // console.log('data fora atlanta ', atlEvents )
-        this.setState({atlEvents, isLoaded:true})
+        this.setState({atlEvents, isLoaded: true})
       })
 
   }
@@ -31,7 +31,7 @@ export default class MeetUpApiCalls extends Component {
       .get('/homecoming/meetups/newyork')
       .then(response => {
         const newYorkEvents = response.data
-        this.setState({newYorkEvents})
+        this.setState({newYorkEvents, isLoaded: true})
       })
 
   }
@@ -41,7 +41,7 @@ export default class MeetUpApiCalls extends Component {
       .then(response => {
         const miamiEvents = response.data
         // console.log('data fora miami ', miamiEvents )
-        this.setState({miamiEvents})
+        this.setState({miamiEvents, isLoaded: true})
       })
 
   }
@@ -56,28 +56,33 @@ export default class MeetUpApiCalls extends Component {
 
   }
   componentWillMount = () => {
-    
-      this.atlantaApiCall()
-      this.newYorkApiCall()
-      this.miamiApiCall()
-      this.losAngelesApiCall()
-    
+
+    this.atlantaApiCall()
+    this.newYorkApiCall()
+    this.miamiApiCall()
+    this.losAngelesApiCall()
+
   }
 
   render() {
-    // const {isLoaded} = this.props
-    // if (!isLoaded) 
-    //   return <h1>Loading ...</h1>
+    const {isLoaded} = this.props
+
     return (
       <div>
-        <Title>ATL Events</Title>
-        <AtlEventInfo atlEvents={this.state.atlEvents}/>
-        <Title>NY Events</Title>
-        <NewYorkEventInfo newYorkEvents={this.state.newYorkEvents}/>
-        <Title>MIA Events</Title>
-        <MiamiEventInfo miamiEvents={this.state.miamiEvents}/>
-        <Title>LA Events</Title>
-        <LaEventInfo laEvents={this.state.laEvents}/>
+
+        {!isLoaded
+          ? <div>
+              <Title>ATL Events</Title>
+              <AtlEventInfo atlEvents={this.state.atlEvents}/>
+              <Title>NY Events</Title>
+              <NewYorkEventInfo newYorkEvents={this.state.newYorkEvents}/>
+              <Title>MIA Events</Title>
+              <MiamiEventInfo miamiEvents={this.state.miamiEvents}/>
+              <Title>LA Events</Title>
+              <LaEventInfo laEvents={this.state.laEvents}/>
+            </div>
+          : <img src="https://loading.io/spinners/ellipsis/lg.discuss-ellipsis-preloader.gif" alt=""/>}
+
       </div>
     )
   }

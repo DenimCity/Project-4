@@ -16,7 +16,8 @@ import NavBar from '../basicstyledcomponents/NavBar'
 class App extends Component {
   state = {
     users: {},
-    cities: []
+    cities: [], 
+    ispageReady:false
   }
   userFromServer = () => {
     axios
