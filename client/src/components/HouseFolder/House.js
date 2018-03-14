@@ -34,9 +34,9 @@ export default class House extends Component {
           <div>{house.address}</div>
           <div>{house.price}/month</div>
         </TextAlign>
-        <OwnerImage>
-        <img  src={house.owner_photo} alt="owner"/>
-        </OwnerImage>
+        
+        <img width="100%" height="400px"  src={house.owner_photo} alt="owner"/>
+        
         <OwnerInfoWrapper className="ownerInfoWrapper">
           <Container className="container">
             <div>
@@ -87,12 +87,6 @@ const HouseContainer = styled.div`
 
 `
 
-const OwnerImage = styled.div`
-
-img {
-  width:100%;
-}
-`
 
 //keys to use later
 {/* <div><img width="100%" src={house.kitchen} alt=""/></div>
