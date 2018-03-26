@@ -15,10 +15,9 @@ import SignIn from './SignIn'
 import NavBar from '../basicstyledcomponents/NavBar'
 class App extends Component {
   state = {
-    users: {},
-    cities: [], 
-    ispageReady:false
+    users: {}
   }
+
   userFromServer = () => {
     axios
       .get('/homecoming/user/profile')
@@ -27,23 +26,11 @@ class App extends Component {
         this.setState({users})
       })
   }
-  citiesFromServer = () => {
-    axios
-      .get(`/homecoming/city/`)
-      .then(response => {
-        const cities = response.data
-        this.setState({cities})
-      })
-  }
   componentWillMount = () => {
     this.userFromServer()
-    this.citiesFromServer()
   }
 
   render() {
-    const CityData = (props) => (<CitiesList {...props} CityInfo={this.state.cities}/>)
-    const HousesData = (props) => (<HouseList {...props} />)
-
     return (
       <div>
         <NavBar/>
@@ -51,8 +38,8 @@ class App extends Component {
           <Switch>
             <Route exact path="/" component={Homepage}/>
             <Route exact path="/about" component={AboutPage}/>
-            <Route exact path="/cities" component={CityData}/>
-            <Route exact path="/cities/:cityId/houses" component={HousesData}/>
+            <Route exact path="/cities" component={CitiesList}/>
+            <Route exact path="/cities/:cityId/houses" component={HouseList}/>
             <Route exact path="/meetups" component={MeetUpApiCall}/>
             <Route exact path="/hosting" component={HouseForm}/>
             <Route exact path="/signin" component={SignIn}/>
