@@ -30,6 +30,11 @@ app.use('/homecoming/user', user)
 const city = require('./routes/cityController')
 app.use('/homecoming/city', city)
 
+const house = require('./routes/houseController')
+app.use('/homecoming/city/:cityId/houses', house)
+
+
+
 const event = require('./routes/eventController')
 app.use('/homecoming/events', event)
 
