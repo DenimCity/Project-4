@@ -58,7 +58,7 @@ export default class MeetUpApiCalls extends Component {
       this.newYorkApiCall()
       this.miamiApiCall()
       this.losAngelesApiCall()
-    }, 900);
+    }, 90);
 
   }
 
