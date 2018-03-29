@@ -1,9 +1,6 @@
 const express = require('express')
 const City = require('../db/models/City')
-const House = require('../db/models/House')
 const router = express.Router({mergeParams: true})
-
-console.log('hit the houses controller')
 
 //get all the houses
 router.get('/', (request, response) => {
@@ -21,7 +18,7 @@ router.get('/', (request, response) => {
 })
 
 // //post a new house route in that city
-router.post('/new', async(request, response) => {
+router.post('/new', async (request, response) => {
   console.log('hit the new house route')
   try {
     const newHouse = new House(request.body)
@@ -38,10 +35,10 @@ router.post('/new', async(request, response) => {
   }
 })
 
-router.get('/:id', async(request, response) => {
+router.get('/:houseId', async (request, response) => {
   try {
     const cityId = request.params.cityId
-    const houseId = request.params.id
+    const houseId = request.params.houseId
     const city = await City
       .findById(cityId)
       .then((city) => {
@@ -53,14 +50,15 @@ router.get('/:id', async(request, response) => {
 
 })
 
-router.get('/:id/delete', async(request, response) => {
-  console.log('trrget');
-  console.log("Deleting:", request.params)
+router.delete('/:houseId', async (request, response) => {
   try {
-    // const cityId = request.params.id console.log(cityId) const houseId =
-    // request.params.id console.log(houseId) const city = await
-    // City.findById(cityId) // console.log(city) house = city.houses.id(houseId)
-    // house.remove() response.json(city)
+    const cityId = request.params.cityId
+    const houseId = request.params.houseId
+    const city = await City.findById(cityId)
+    house = city.houses.id(houseId)
+    house.remove()
+    const saved = await city.save()
+    response.json(city)
   } catch (err) {
     console.log(err)
   }
