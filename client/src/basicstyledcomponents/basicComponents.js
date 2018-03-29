@@ -39,6 +39,14 @@ flex-direction:column;
 align-items:center;
 `
 
+export const CityImages = styled.img`
+border-radius:6px;
+width: 60vw;
+height: 30vh;
+@media (max-width: 669px){
+  width: 100%;
+}
+`
 export const Image = styled.img`
 border-radius:6px;
 width:100%;
@@ -63,7 +71,6 @@ export const Table = styled.div `
 `
 
 export const Column = styled.div `
-    /* border-right: 1px black solid; */
     text-align: left;
 `
 export const ColumnTitle = styled.div `
