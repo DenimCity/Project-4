@@ -5,12 +5,8 @@ const mongoose = require('mongoose');
 const app = express();
 
 
-
-
-
 mongoose.Promise = global.Promise;
 mongoose.connect(process.env.MONGODB_URI); 
-
 
 const connection = mongoose.connection;
 connection.on('connected', () => {
@@ -33,11 +29,8 @@ app.use('/homecoming/city', city)
 const house = require('./routes/houseController')
 app.use('/homecoming/city/:cityId/houses', house)
 
-
-
 const event = require('./routes/eventController')
 app.use('/homecoming/events', event)
-
 
 const meetUp = require('./routes/meetupController')
 app.use('/homecoming/meetups', meetUp)
@@ -46,7 +39,6 @@ app.use(express.static(__dirname + '/client/build/'));
 app.get('*', (req,res) => {
   res.sendFile(__dirname + '/client/build/index.html')
 })
-
 
 const PORT = process.env.PORT || 4000;
 app.listen(PORT, () => {
