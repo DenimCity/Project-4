@@ -19,7 +19,7 @@ export default class CitiesList extends Component {
   componentWillMount() {
     setTimeout(() => {
       this.citiesFromServer()
-    }, 900);
+    }, 90);
 
   }
 
