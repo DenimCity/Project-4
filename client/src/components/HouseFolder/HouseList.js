@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import House from './House'
-import HouseForm from './HouseForm'
+
 import styled from 'styled-components'
 import axios from 'axios'
 
@@ -39,7 +39,7 @@ export default class HouseList extends Component {
   // }
 
   render() {
-    const makeNewHouse = () => (<HouseForm createHouse={this.createAHouse}/>)
+    // const makeNewHouse = () => (<HouseForm createHouse={this.createAHouse}/>)
     const housesList = this
       .state
       .houses
