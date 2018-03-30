@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom'
 import { Wrapper, CityImages, Title3} from '../../basicstyledcomponents/basicComponents'
-import styled from 'styled-components'
+
 
 class City extends Component {
   render() {
