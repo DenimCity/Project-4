@@ -22,9 +22,7 @@ router.post('/new', async (request, response) => {
   console.log('hit the new house route')
   try {
     const newHouse = new House(request.body)
-    console.log('here is the new house ', newHouse)
     const city = await City.findById(request.params.cityId) //
-    console.log('we found the city ', city)
     city
       .houses
       .push(newHouse)
