@@ -41,17 +41,11 @@ const house1 = new House({
   address: "49384 Shane PlainsEllie Overpass",
   longitude: '33.7719° N',
   latitude: '84.3665° W',
-  zip: "30308",
   price: "$600",
-  kitchen: "https://a0.muscache.com/im/pictures/29bf93fe-f33e-4b83-aa39-8196d64233bd.jpg?aki" +
-      "_policy=x_large",
-  bathroom: "https://a0.muscache.com/im/pictures/0691c9ad-93f9-4815-a8fa-d3cfcd147138.jpg?aki" +
-      "_policy=x_large",
-  livingroom: "https://a0.muscache.com/im/pictures/b5f6d818-4033-4e80-a19a-93be5eb8f0db.jpg?aki" +
-      "_policy=x_large",
-  owner: "Tony",
+  owner: "Tate Kent",
   owner_photo: "https://i.imgur.com/FYdgUhz.jpg",
-  owner_phone: "359.764.7139"
+  owner_phone: "359.764.7139",
+  owner_email:"tate.kent@gmail.com",
 })
 
 const house2 = new House({
@@ -64,17 +58,11 @@ const house2 = new House({
   address: "7954 Maryse IslandEllie Overpass",
   longitude: '33.8463° N',
   latitude: '84.3621° W',
-  zip: "48099-2774",
   price: "$700",
-  kitchen: "https://a0.muscache.com/im/pictures/60478126/d135c307_original.jpg?aki_policy=x_" +
-      "large",
-  bathroom: "https://a0.muscache.com/im/pictures/32996947/62292a6f_original.jpg?aki_policy=x_" +
-      "large",
-  livingroom: "https://a0.muscache.com/im/pictures/60477982/abc288e8_original.jpg?aki_policy=x_" +
-      "large",
-  owner: "Diane",
+  owner: "Knowles Ellis",
   owner_photo: "https://i.imgur.com/llS7sCc.jpg",
-  owner_phone: "1-738-235-4434 x65580359.764.7139"
+  owner_phone: "897.457.2370",
+  owner_email:"diane.reed@undefined.com"
 })
 const house3 = new House({
   city_name: "Atlanta",
@@ -85,17 +73,11 @@ const house3 = new House({
   address: "476 Leuschke TunnelEllie Overpass",
   longitude: '33.8804° N',
   latitude: '84.4687° W',
-  zip: "48099-2774",
   price: "$800",
-  kitchen: "https://a0.muscache.com/im/pictures/c7d7a722-4f77-496e-90ad-9bbd1d21a401.jpg?aki" +
-      "_policy=x_large",
-  bathroom: "https://a0.muscache.com/im/pictures/c84093a2-0cf2-4a91-a547-70cd76796c2e.jpg?aki" +
-      "_policy=x_large",
-  livingroom: "https://a0.muscache.com/im/pictures/d8c9125c-2c0d-4f5b-926d-4ef335cf8e87.jpg?aki" +
-      "_policy=x_large",
-  owner: "Ninti",
+  owner: "Brooke Pate",
   owner_photo: "https://i.imgur.com/S3sGKnu.jpg",
-  owner_phone: "(299) 969-4776 x3123359.764.7139"
+  owner_phone: "299.969-4776",
+  owner_email:"brooke.pate@gmail.com"
 })
 Atlanta
   .houses
@@ -110,14 +92,11 @@ const house4 = new House({
   address: "Bernard TerraceEllie Overpass",
   longitude: '',
   latitude: '',
-  zip: "48099-2774",
   price: "$500",
-  kitchen: "Dirty",
-  bathroom: "nice",
-  livingroom: "cool",
-  owner: "Brenda",
+  owner: "Jewell Dominguez",
   owner_photo: "https://i.imgur.com/f3WIKxA.jpg",
-  owner_phone: "359.764.7139"
+  owner_phone: "935.505.2246",
+  owner_email:"jewell.dominguez@gmail.com"
 })
 
 const house5 = new House({
@@ -128,14 +107,12 @@ const house5 = new House({
   address: "1610 Raynor FieldsEllie Overpass",
   longitude: '',
   latitude: '',
-  zip: "48099-2774",
   price: "$800",
-  kitchen: "Dirty",
-  bathroom: "nice",
-  livingroom: "cool",
-  owner: "Michelle",
+  owner: "Michelle Casey",
   owner_photo: "https://i.imgur.com/lko39vz.jpg",
-  owner_phone: "359.764.7139"
+  owner_phone: "962.461.2141",
+  owner_email:"michelle.casey@gmail.com"
+
 })
 const house6 = new House({
   city_name: "Miami",
@@ -145,14 +122,11 @@ const house6 = new House({
   address: "980 Wehner PrairieEllie Overpass",
   longitude: '',
   latitude: '',
-  zip: "48099-2774",
   price: "$1000",
-  kitchen: "Dirty",
-  bathroom: "nice",
-  livingroom: "cool",
-  owner: "George",
+  owner: "Malone Spears",
   owner_photo: "https://i.imgur.com/Y5LWTra.jpg",
-  owner_phone: "359.764.7139"
+  owner_phone: "895.490.2090",
+  owner_email:"malone.spears@gmail.com"
 })
 
 Miami
@@ -168,14 +142,11 @@ const house7 = new House({
   address: "0235 Zemlak JunctionEllie Overpass",
   longitude: '',
   latitude: '',
-  zip: "48099-2774",
   price: "$1500",
-  kitchen: "Dirty",
-  bathroom: "nice",
-  livingroom: "cool",
-  owner: "Jean",
+  owner: "Jean Nixon",
   owner_photo: "https://i.imgur.com/srlfBko.jpg",
-  owner_phone: "359.764.7139"
+  owner_phone: "925.546.3304",
+  owner_email:"jean.nixon@gmail.com"
 })
 
 const house8 = new House({
@@ -186,14 +157,11 @@ const house8 = new House({
   address: "05311 Mariana PineEllie Overpass",
   longitude: '',
   latitude: '',
-  zip: "48099-2774",
   price: "$300",
-  kitchen: "Dirty",
-  bathroom: "nice",
-  livingroom: "cool",
-  owner: "Marco",
+  owner: "Marco Wood",
   owner_photo: "https://i.imgur.com/WNpGmAu.jpg",
-  owner_phone: "359.764.7139"
+  owner_phone: "900.519.3255",
+  owner_email:"marco.wood@gmail.com"
 })
 const house9 = new House({
   city_name: "Los Angeles",
@@ -203,14 +171,11 @@ const house9 = new House({
   address: "64784 Parker BrooksEllie Overpass",
   longitude: '',
   latitude: '',
-  zip: "48099-2774",
   price: "$600",
-  kitchen: "Dirty",
-  bathroom: "nice",
-  livingroom: "cool",
-  owner: "Leonel",
+  owner: "Flores Bond",
   owner_photo: "https://i.imgur.com/uw4FOZv.jpg",
-  owner_phone: "359.764.7139"
+  owner_phone: "858.450.2965",
+  owner_email:"flores.bond@gmail.com"
 })
 
 LA
@@ -226,14 +191,11 @@ const house10 = new House({
   address: "468 Reynolds PlazaEllie Overpass",
   longitude: '',
   latitude: '',
-  zip: "48099-2774",
   price: "$800",
-  kitchen: "Dirty",
-  bathroom: "nice",
-  livingroom: "cool",
-  owner: "Shakira",
+  owner: "Karen Atkinson",
   owner_photo: "https://i.imgur.com/6cwZ4Y7.jpg",
-  owner_phone: "359.764.7139"
+  owner_phone: "858.450.2965",
+  owner_email:"karen.atkins@gmail.com"
 })
 
 const house11 = new House({
@@ -244,14 +206,11 @@ const house11 = new House({
   address: "16118 Crooks RoadEllie Overpass",
   longitude: '',
   latitude: '',
-  zip: "48099-2774",
   price: "$700",
-  kitchen: "Dirty",
-  bathroom: "nice",
-  livingroom: "cool",
-  owner: "Tony",
+  owner: "Savannah Sanders",
   owner_photo: "https://i.imgur.com/Qj1WVQB.jpg",
-  owner_phone: "359.764.7139"
+  owner_phone: "359.764.7139",
+  owner_email:"savannah.sanders@gmail.com"
 })
 const house12 = new House({
   city_name: "New York",
@@ -261,14 +220,11 @@ const house12 = new House({
   address: "3234 Johnathan MountainEllie Overpass",
   longitude: '',
   latitude: '',
-  zip: "48099-2774",
   price: "$300",
-  kitchen: "Dirty",
-  bathroom: "nice",
-  livingroom: "cool",
-  owner: "Homer",
+  owner: "Gardner Wheeler",
   owner_photo: "https://i.imgur.com/sDVPVPl.jpg",
-  owner_phone: "359.764.7139"
+  owner_phone: "359.764.7139",
+  owner_email:"gardner.wheeler@gmail.com"
 })
 
 NewYork
