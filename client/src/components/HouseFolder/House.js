@@ -24,9 +24,7 @@ export default class House extends Component {
       return (
         <OwnerCard className="OwnerCard">
           <TextAlign>
-            <HouseContainer>
-              <HousePhoto src={house.house_photo} alt="house"/>
-            </HouseContainer>
+            <HousePhoto src={house.house_photo} alt="house"/>
             <div>
               <strong>Description</strong>
             </div>
@@ -39,57 +37,39 @@ export default class House extends Component {
             <div>{house.price}/month</div>
             <br/>
             <button onClick={() => this.toggleOwner()}>View Owner</button>
-            {/* <a href={`/cities/:cityId/houses/:${house._id}`} >View Owner</a> */}
           </TextAlign>
         </OwnerCard>
       )
     }
     return (
       <OwnerCard className="OwnerCard">
+        <TextAlign>
+          <OwnerPhoto src={house.owner_photo} alt="owner"/>
+          <div>
+            <strong>Owner</strong>
+          </div>
+          <div>
+            {house.owner}
+          </div>
+          <div>
+            <strong>Contact</strong>
+          </div>
 
-        <OwnerPhoto src={house.owner_photo} alt="owner"/>
-
-        <OwnerInfoWrapper className="ownerInfoWrapper">
-          <Container className="container">
+            
             <div>
-              <strong>Owner</strong>
+              <a href={`tel:+${house.owner_phone}`}>Call</a>
             </div>
-            <div>
-              {house.owner}
-            </div>
-          </Container>
-          <Container>
-            <div>
-              <strong>Contact</strong>
-            </div>
-            <div>
-              <div>
-                <a href={`tel:+${house.owner_phone}`}>Call</a>
-              </div>
-            </div>
-            <div>
-              <a href={`mailto:${house.owner_email}?Subject=House%20Posting`}>eMail</a>
-            </div>
-            <button onClick={() => this.toggleOwner()}>View House</button>
-          </Container>
-        </OwnerInfoWrapper>
+          
+          <div>
+            <a href={`mailto:${house.owner_email}?Subject=House%20Posting`}>eMail</a>
+          </div>
+          <button onClick={() => this.toggleOwner()}>View House</button>
+        </TextAlign>
       </OwnerCard>
     )
   }
 }
-const OwnerInfoWrapper = styled.div `
-display:flex;
-justify-content: center;
-margin: 5px;
-text-align: center;
-`
-const Container = styled.div `
-display: flex;
-flex-direction: column;
-justify-content:center;
-align-content:center;
-margin: 0px 30px;
-`
+
 
 const TextAlign = styled.div `
 text-align:center;
@@ -104,19 +84,12 @@ height: 45vh;
   height: 60vh;
 }
 `
-
-const HouseContainer = styled.div `
-/* width:10vw; */
-
-`
-
 const OwnerPhoto = styled.img `
 width:100%; 
 height:30vh;
 @media (max-width: 669px){
   width: 100%;
 }
-
 `
 
 const HousePhoto = styled.img `
@@ -125,8 +98,3 @@ height:30vh;
 
 `
 
-//keys to use later
-{/* <div><img width="100%" src={house.kitchen} alt=""/></div>
-<div><img width="100%" src={house.bathroom} alt=""/></div>
-<div><img width="100%" src={house.livingroom} alt=""/></div> */
-}
