@@ -48,16 +48,7 @@ const HouseSchema = new Schema({
   latitude: {
     type: String
   },
-  zip: {
-    type: String
-  },
   price: {
-    type: String
-  },
-  kitchen: {
-    type: String
-  },
-  bathroom: {
     type: String
   },
   owner: {
@@ -69,7 +60,7 @@ const HouseSchema = new Schema({
   owner_phone: {
     type: String
   },
-  livingroom: {
+  owner_email: {
     type: String
   }
 }, {
