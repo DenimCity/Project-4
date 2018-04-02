@@ -51,18 +51,18 @@ export default class House extends Component {
           <div>
             {house.owner}
           </div>
+          <br/>
           <div>
             <strong>Contact</strong>
           </div>
-
-            
-            <div>
-              <a href={`tel:+${house.owner_phone}`}>Call</a>
-            </div>
-          
+          <div>
+            <a href={`tel:+${house.owner_phone}`}>Call</a>
+          </div>
+          <br/>
           <div>
             <a href={`mailto:${house.owner_email}?Subject=House%20Posting`}>eMail</a>
           </div>
+          <br/>
           <button onClick={() => this.toggleOwner()}>View House</button>
         </TextAlign>
       </OwnerCard>
@@ -70,11 +70,9 @@ export default class House extends Component {
   }
 }
 
-
 const TextAlign = styled.div `
 text-align:center;
 `
-
 const OwnerCard = styled.div `
 border: 1px solid;
 box-shadow: 2px 3px 3px 3px grey;
@@ -91,10 +89,8 @@ height:30vh;
   width: 100%;
 }
 `
-
 const HousePhoto = styled.img `
 width:100%;
 height:30vh;
 
 `
-
