@@ -116,3 +116,9 @@ const UserSchema = new Schema({
   usePushEach: true
 },)
 
+module.expors = () => {
+  UserSchema,
+  CitySchema,
+  HouseSchema,
+  EventSchema
+}
