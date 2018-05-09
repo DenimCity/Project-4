@@ -18,13 +18,11 @@ export default class HouseList extends Component {
     axios
       .get(`/homecoming/city/${cityId}/houses`)
       .then(response => {
-        const houses = response.data
-        this.setState({houses})
+        this.setState({houses:response.data})
       })
   }
 
-   createAHouse = async(cityId) => {
-    console.log('here from the create user route');
+   createAHouse = async (cityId) => {
     const response = await axios.post(`/cityId/houses/new`, cityId)
     const newHouse = response.data
     const houses = [...this.state.houses]
