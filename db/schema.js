@@ -116,10 +116,3 @@ const UserSchema = new Schema({
   usePushEach: true
 },)
 
-module.exports = {
-  UserSchema,
-  CitySchema,
-  EventSchema,
-  HouseSchema
-
-}
