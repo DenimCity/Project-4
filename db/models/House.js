@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 const Schema = require('../schema')
-const House = mongoose.model('House', Schema.HouseSchema)
+const House = mongoose.model('House', Schema)
 // console.log('hello from in the house schema')
 
 
