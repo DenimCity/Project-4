@@ -6,6 +6,8 @@ import MiamiEventInfo from '../MeetUpApi/MiamiEventInfo'
 import NewYorkEventInfo from '../MeetUpApi/NewYorkEventInfo'
 import {Title} from '../../basicstyledcomponents/basicComponents'
 import styled from 'styled-components'
+
+import * as meetUpservices from '../MeetUpApi/ApiCalls'
 export default class MeetUpApiCalls extends Component {
 
   state = {
@@ -16,12 +18,13 @@ export default class MeetUpApiCalls extends Component {
     isLoading: true
   }
 
+
+  
   atlantaApiCall = () => {
     axios
       .get('homecoming/meetups/atlanta')
-      .then(response => {
-        const atlEvents = response.data
-        this.setState({atlEvents, isLoading: false})
+      .then(response => { 
+        this.setState({atlEvents: response.data,  isLoading: false })
       })
 
   }
@@ -29,8 +32,7 @@ export default class MeetUpApiCalls extends Component {
     axios
       .get('/homecoming/meetups/newyork')
       .then(response => {
-        const newYorkEvents = response.data
-        this.setState({newYorkEvents, isLoading: false})
+        this.setState({newYorkEvents: response.data, isLoading: false })
       })
 
   }
@@ -38,17 +40,17 @@ export default class MeetUpApiCalls extends Component {
     axios
       .get('/homecoming/meetups/miami')
       .then(response => {
-        const miamiEvents = response.data
-        this.setState({miamiEvents, isLoading: false})
+        this.setState({miamiEvents: response.data, isLoading: false })
       })
 
   }
+  // https://http.cat/101
+
   losAngelesApiCall = () => {
     axios
       .get('homecoming/meetups/la')
       .then(response => {
-        const laEvents = response.data
-        this.setState({laEvents})
+        this.setState({laEvents:response.data, isLoading: false })
       })
 
   }
