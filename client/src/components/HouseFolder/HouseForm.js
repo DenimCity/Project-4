@@ -7,13 +7,13 @@ export default class HouseForm extends Component {
   state = {
     cities:[],
     newHouse:{
-      "house_photo":'',
-      "amenities":'',
-      "description":'',
-      "address":'',
-      "price":'',
-      "owner_photo":'',
-      "owner_phone":'',
+      house_photo:'',
+      amenities:'',
+      description:'',
+      address:'',
+      price:'',
+      owner_photo:'',
+      owner_phone:'',
   },
     houses:[],
 
@@ -24,9 +24,7 @@ export default class HouseForm extends Component {
     axios
       .get(`/homecoming/city/`)
       .then(response => {
-        const cities = response.data
-        console.log('the cities are',cities);
-        this.setState({cities})
+      this.setState({ cities:response.data })
       })
   }
 
@@ -34,28 +32,25 @@ export default class HouseForm extends Component {
     this.citiesFromServer()
   }
 
-  handleChange = (event) => {
+  handleChange = ( event ) => {
+    
     const attribute = event.target.name
-    let val = event.target.value
+    const value = event.target.value
     const newHouse = {
       ...this.state.newHouse
     }
-    newHouse[attribute] = val
-    console.log('handle change',newHouse)
+    newHouse[attribute] = value
+   
     this.setState({newHouse})
   }
  
 
   createAHouse = () => {
-    console.log('create house',);
     const cityId = this.getCityId(this.state.newHouse.cities)
-
     axios.post(`/homecoming/city/${cityId}/houses/new`, this.state.newHouse)
       .then(response => {
         const newHouse = response.data
-        console.log('the new house data', newHouse);
         const houses = [...this.state.houses]
-      console.log('the current houses are',this.state)
         houses.push(newHouse)
         this.setState({houses})
       })
