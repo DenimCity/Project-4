@@ -1,64 +1,28 @@
 import React, {Component} from 'react'
-import {Table, Column, ColumnTitle, Holder, LinkTag} from '../../basicstyledcomponents/basicComponents'
+import {Table, Column, th, Holder, LinkTag} from '../../basicstyledcomponents/basicComponents'
 
 export default class AtlEventInfo extends Component {
   render() {
     return (
-      <div>
         <div>
-          {this
-            .props
-            .atlEvents
-            .map((event) => {
-              return (
-                <div>
-
-                  <Table>
-                    <Column>
-                      <ColumnTitle>Name</ColumnTitle>
-                      {this
-                        .props
-                        .atlEvents
-                        .map(event => {
-                          return <Holder>{event.name}</Holder>
-                        })}
-                    </Column>
-                    <Column>
-                      <ColumnTitle>Number of Members</ColumnTitle>
-                      {this
-                        .props
-                        .atlEvents
-                        .map(event => {
-                          return <Holder>{event.members}</Holder>
-                        })}
-                    </Column>
-                    <Column>
-                      <ColumnTitle>Categories</ColumnTitle>
-                      {this
-                        .props
-                        .atlEvents
-                        .map(event => {
-                          return <Holder>{event.category.name}</Holder>
-                        })}
-                    </Column>
-
-                    <Column>
-                      <ColumnTitle>Link</ColumnTitle>
-                      {this
-                        .props
-                        .atlEvents
-                        .map(event => {
-                          return <Holder>
-                            <LinkTag href={event.link} target="blank">
-                              Click Here</LinkTag>
-                          </Holder>
-                        })}
-                    </Column>
-                  </Table>
-                </div>
-              )
-            })}
-        </div>
+            <table>
+              <tboody>
+                <th>Name</th>
+                <th>Number of Members</th>
+                <th>Categories</th>
+                <th>Link</th>
+                {this
+                .props
+                .atlEvents.map((event, index)=> {
+                  return (
+                    <tr>
+                      <td> <h5 key={index}>{event.name}</h5> </td>
+                      <td><h5> {event.name} </h5></td>
+                      <td><h5>{event.category.name}</h5></td>
+                      <td> <h5> <a href={event.link} target="blank"> Click Here</a></h5> </td>
+                    </tr> ) })}
+              </tboody>
+            </table>
       </div>
     )
   }
