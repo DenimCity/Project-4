@@ -24,7 +24,7 @@ export default class MeetUpApiCalls extends Component {
     axios
       .get('homecoming/meetups/atlanta')
       .then(response => { 
-        this.setState({atlEvents: response.data,  isLoading: false })
+        this.setState({ atlEvents: response.data,  isLoading: false })
       })
 
   }
@@ -32,7 +32,7 @@ export default class MeetUpApiCalls extends Component {
     axios
       .get('/homecoming/meetups/newyork')
       .then(response => {
-        this.setState({newYorkEvents: response.data, isLoading: false })
+        this.setState({ newYorkEvents: response.data, isLoading: false })
       })
 
   }
@@ -40,22 +40,24 @@ export default class MeetUpApiCalls extends Component {
     axios
       .get('/homecoming/meetups/miami')
       .then(response => {
-        this.setState({miamiEvents: response.data, isLoading: false })
+        this.setState({ miamiEvents: response.data, isLoading: false })
       })
 
   }
-  // https://http.cat/101
 
+ 
   losAngelesApiCall = () => {
     axios
       .get('homecoming/meetups/la')
       .then(response => {
-        this.setState({laEvents:response.data, isLoading: false })
+        this.setState({ laEvents: response.data, isLoading: false })
       })
 
   }
   componentWillMount = () => {
+    
     setTimeout(() => {
+      
       this.atlantaApiCall()
       this.newYorkApiCall()
       this.miamiApiCall()
