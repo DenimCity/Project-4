@@ -22,7 +22,7 @@ export default class House extends Component {
     const {house} = this.props
     if (this.state.ownerShowing) {
       return (
-        <OwnerCard className="OwnerCard">
+        <OwnerCard onMouseDownCapture={() => this.toggleOwner()} className="OwnerCard">
           <TextAlign>
             <HousePhoto src={house.house_photo} alt="house"/>
             <div>
@@ -36,13 +36,13 @@ export default class House extends Component {
             <strong>Price</strong>
             <div>{house.price}/month</div>
             <br/>
-            <button onClick={() => this.toggleOwner()}>View Owner</button>
+            {/* <button >View Owner</button> */}
           </TextAlign>
         </OwnerCard>
       )
     }
     return (
-      <OwnerCard className="OwnerCard">
+      <OwnerCard onMouseDownCapture={() => this.toggleOwner()} className="OwnerCard">
         <TextAlign>
           <OwnerPhoto src={house.owner_photo} alt="owner"/>
           <div>
@@ -63,7 +63,7 @@ export default class House extends Component {
             <a href={`mailto:${house.owner_email}?Subject=House%20Posting`}>eMail</a>
           </div>
           <br/>
-          <button onClick={() => this.toggleOwner()}>View House</button>
+          {/* <button onMouseOver={() => this.toggleOwner()}>View House</button> */}
         </TextAlign>
       </OwnerCard>
     )
@@ -76,8 +76,9 @@ text-align:center;
 const OwnerCard = styled.div `
 border: 1px solid;
 box-shadow: 2px 3px 3px 3px grey;
-max-width:500px;
+max-width:490px;
 height: 45vh;
+cursor:pointer;
 @media (max-width: 669px){
   height: 60vh;
 }
