@@ -24,15 +24,15 @@ export default class MeetUpApiCalls extends Component {
     axios
       .get('homecoming/meetups/atlanta')
       .then(response => { 
-        this.setState({ atlEvents: response.data,  isLoading: false })
+        this.setState({ atlEvents: response.data })
       })
 
   }
-  newYorkApiCall = () => {
-    axios
+  newYorkApiCall = async  () => {
+   await  axios
       .get('/homecoming/meetups/newyork')
       .then(response => {
-        this.setState({ newYorkEvents: response.data, isLoading: false })
+        this.setState({ newYorkEvents: response.data})
       })
 
   }
@@ -40,7 +40,7 @@ export default class MeetUpApiCalls extends Component {
     axios
       .get('/homecoming/meetups/miami')
       .then(response => {
-        this.setState({ miamiEvents: response.data, isLoading: false })
+        this.setState({ miamiEvents: response.data })
       })
 
   }
@@ -51,19 +51,16 @@ export default class MeetUpApiCalls extends Component {
       .get('homecoming/meetups/la')
       .then(response => {
         this.setState({ laEvents: response.data, isLoading: false })
-      })
-
+      }
+    )
   }
-  componentWillMount = () => {
-    
-    setTimeout(() => {
-      
-      this.atlantaApiCall()
-      this.newYorkApiCall()
-      this.miamiApiCall()
-      this.losAngelesApiCall()
-    }, 90);
 
+
+   componentWillMount =  () => {
+       this.atlantaApiCall()
+       this.newYorkApiCall()
+       this.miamiApiCall()
+       this.losAngelesApiCall()
   }
 
   render() {
@@ -81,10 +78,10 @@ export default class MeetUpApiCalls extends Component {
         <AtlEventInfo atlEvents={this.state.atlEvents}/>
         <Title>NY Events</Title>
         <NewYorkEventInfo newYorkEvents={this.state.newYorkEvents}/>
-        <Title>MIA Events</Title>
-        <MiamiEventInfo miamiEvents={this.state.miamiEvents}/>
         <Title>LA Events</Title>
         <LaEventInfo laEvents={this.state.laEvents}/>
+        <Title>MIA Events</Title>
+        <MiamiEventInfo miamiEvents={this.state.miamiEvents}/>
       </div>
     )
   }
@@ -96,3 +93,4 @@ display: flex;
     flex-wrap: wrap;
 
 `
+
