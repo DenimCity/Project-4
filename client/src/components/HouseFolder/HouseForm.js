@@ -7,13 +7,13 @@ export default class HouseForm extends Component {
   state = {
     cities:[],
     newHouse:{
-      house_photo:'',
-      amenities:'',
-      description:'',
-      address:'',
-      price:'',
-      owner_photo:'',
-      owner_phone:'',
+      house_photo:undefined,
+      amenities:undefined,
+      description:undefined,
+      address:undefined,
+      price:undefined,
+      owner_photo:undefined,
+      owner_phone:undefined,
   },
     houses:[],
 
@@ -24,7 +24,9 @@ export default class HouseForm extends Component {
     axios
       .get(`/homecoming/city/`)
       .then(response => {
-      this.setState({ cities:response.data })
+        const cities = response.data
+        console.log(cities)
+      this.setState({ cities })
       })
   }
 
@@ -33,20 +35,22 @@ export default class HouseForm extends Component {
   }
 
   handleChange = ( event ) => {
+    this.setState({ [event.target.name]: event.target.value })
     
-    const attribute = event.target.name
-    const value = event.target.value
-    const newHouse = {
-      ...this.state.newHouse
-    }
-    newHouse[attribute] = value
+    // const attribute = event.target.name
+    // const value = event.target.value
+    // const newHouse = {
+    //   ...this.state.newHouse
+    // }
+    // newHouse[attribute] = value
    
-    this.setState({newHouse})
+    // this.setState({newHouse})
   }
  
 
   createAHouse = () => {
     const cityId = this.getCityId(this.state.newHouse.cities)
+    console.log(cityId)
     axios.post(`/homecoming/city/${cityId}/houses/new`, this.state.newHouse)
       .then(response => {
         const newHouse = response.data
@@ -60,16 +64,17 @@ export default class HouseForm extends Component {
   }
 
   getCityId = (cityName) => {
-    const city = this.state.cities.find(city =>  city.name === cityName)
-     return city._id
-
+    const city = this.state.cities.map( (city, index)=> {
+      console.log('city',city)
+      return city._id
+    })
     }
   
   handleSubmit = (event) => {
+  event.preventDefault()
   this.createAHouse()
-    event.preventDefault()
-    this.setState({redirect: true })
-  }
+  this.setState({redirect: true })  
+}
   
 
   render() {
@@ -98,7 +103,7 @@ export default class HouseForm extends Component {
               placeholder="House Photo"
               
               required
-              value={this.state.house_photo}
+              // value={this.state.newHousehouse_photo}
               />
           </div>
           <div>
@@ -108,7 +113,8 @@ export default class HouseForm extends Component {
               placeholder="Enter your amenities"
              
               required
-              value={this.state.amenities}/>
+              // value={this.state.newHouseamenities}
+              />
           </div>
           <div>
             <Input
@@ -116,7 +122,8 @@ export default class HouseForm extends Component {
               name="description"
               placeholder="Enter description"
               required
-              value={this.state.description}/>
+              // value={this.state.newHousedescription}
+              />
           </div>
           <div>
             <Input
@@ -125,7 +132,8 @@ export default class HouseForm extends Component {
               placeholder="Enter address"
               default="367 Kuhic River"
               required
-              value={this.state.newHouse.address}/>
+              // value={this.state.newHouse.address} 
+              />
           </div>
           <div>
             <Input
@@ -133,7 +141,8 @@ export default class HouseForm extends Component {
               name="price"
               placeholder="Enter Monthly price"
               required
-              value={this.state.newHouse.price}/>
+              // value={this.state.newHouse.price}
+              />
           </div>
           <div>
             <Input
@@ -141,7 +150,8 @@ export default class HouseForm extends Component {
               name="owner_photo"
               placeholder="Enter your photo.."
               default="https://i.imgur.com/G80lKgk.jpg"
-              value={this.state.newHouse.owner_photo}/>
+              // value={this.state.newHouse.owner_photo}
+              />
           </div>
           <div>
             <Input
@@ -151,7 +161,8 @@ export default class HouseForm extends Component {
              
               default="999-999-999"
               required
-              value={this.state.newHouse.owner_phone}/>
+              // value={this.state.newHouse.owner_phone}
+              />
           </div>
           <ButtonContainer>
 

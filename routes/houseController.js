@@ -4,12 +4,13 @@ const router = express.Router({mergeParams: true})
 
 //get all the houses
 router.get('/', (request, response) => {
+  console.log('hit houses route');
   const cityId = request.params.cityId
-  const houseId = request.params.id
+  console.log(cityId);
   City
     .findById(cityId)
     .then((city) => {
-      const houses = city.houses
+    const houses = city
       response.json(houses)
     })
     .catch((error) => {
