@@ -3,7 +3,7 @@
 created by Jean Altidor
 -- testing update with 
 GWI 13' contact: jeanwaltidor@gmail.com
-
+223
 Project description
 This is an app developed to make finding internship housing more convient. As well as, helping the students find professional social network. 
 
