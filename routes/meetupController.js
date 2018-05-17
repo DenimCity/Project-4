@@ -10,7 +10,7 @@ router.get('/miami', async(request, response) => {
     }).then((miami)=> {
       response.json(miami)
     }).catch((error)=>{
-      console.log('no data found',error);
+      console.log('no data found', error);
     })
 
 })
@@ -22,7 +22,7 @@ router.get('/atlanta', async(request, response) => {
     }).then((atlanta)=> {
       response.json(atlanta)
     }).catch((error)=>{
-      console.log('no data found',error);
+      console.log('no data found', error);
     })
 })
 
@@ -34,7 +34,7 @@ router.get('/la', async(request, response) => {
     }).then((la)=> {
       response.json(la)
     }).catch((error)=>{
-      console.log('no data found',error);
+      console.log('no data found', error);
     })
 })
 
@@ -46,7 +46,7 @@ router.get('/newyork', async(request, response) => {
     }).then((newyork)=> {
       response.json(newyork)
     }).catch((error)=>{
-      console.log('no data found',error);
+      console.log('no data found', error);
     })
 })
 
