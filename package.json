@@ -1,6 +1,6 @@
 {
   "engines": {
-    "node": "9.4.0"
+    "node": "10.x.x"
   },
   "name": "homecoming",
   "version": "1.0.0",
@@ -8,6 +8,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node server.js",
+    "lint": "./node_modules/.bin/eslint --ext js,jsx --max-warnings 0 server.js ",
     "dev": "concurrently \"nodemon server.js\" \"cd ./client  && npm start \" ",
     "test": "echo \"Error: no test specified\" && exit 1",
     "postinstall": "cd client && npm install && npm run build"
@@ -30,11 +31,18 @@
     "joi": "^13.1.2",
     "mongodb": "^3.0.5",
     "mongoose": "^5.0.7",
-    "nodemon": "^1.17.1",
+    "nodemon": "^1.18.4",
     "npm": "^5.10.0",
     "passport": "^0.4.0",
     "passport-local": "^1.0.0",
     "passport-local-mongoose": "^4.5.0",
     "slick-carousel": "^1.8.1"
+  },
+  "devDependencies": {
+    "eslint": "^5.6.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jsx-a11y": "^6.1.1",
+    "eslint-plugin-react": "^7.11.1"
   }
 }
