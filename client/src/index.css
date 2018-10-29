@@ -1,0 +1,16 @@
+body {
+ height:100vh;
+  width:100vw;
+  font-family: sans-serif;
+  margin:0;
+  background-color:rgba(238, 238, 238, 0.5);
+}
+
+svg.svg-inline--fa.fa-twitter.fa-w-16 {
+  font-size: 10rem;
+}
+
+svg.svg-inline--fa.fa-medium.fa-w-14 {
+  font-size: 12rem;
+}
+
