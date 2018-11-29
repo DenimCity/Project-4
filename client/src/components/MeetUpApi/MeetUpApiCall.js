@@ -16,6 +16,13 @@ export default class MeetUpApiCalls extends Component {
     isLoading: true
   }
 
+  callAllCities =()=> {
+    axios.get('')
+    .then(res => {
+      console.log("res: -> ",res)  
+    })
+  }
+
   atlantaApiCall = () => {
     axios
       .get('homecoming/meetups/atlanta')
